@@ -1,0 +1,57 @@
+// --------------------
+// 일반 요소 
+// --------------------
+ul
+  list-style: none
+a
+  text-decoration: none
+  color: #000
+
+.a11y-hidden
+  width: 1px
+  height: 1px
+  margin-top: -1px
+  text-indent: -9999px
+  visiblity: hidden
+
+// --------------------
+// 헤더 영역 
+// --------------------
+.page-header
+  .brand
+    @extend %text-hidden
+  
+  .brand-product
+    .brand-name
+      font-size: 64px
+      font-weight: 500
+    .brand-powered
+      @extend %text-hidden 
+      display: block
+    
+  .page-menu
+    @extend %text-hidden
+  
+  .gnb
+    border-bottom: 1px solid #cdcdcd
+
+  .gnb-menu
+    @extend %clearfix
+    li
+      float: left
+    a
+      display: inlien-block
+      margin-right: 20px
+      margin-left: 20px
+      height: 60px
+      line-height: 60px
+      font-size: 15px
+      &.active
+        color: #00b3e3
+
+
+// --------------------
+// 푸터 영역 
+// --------------------
+
+
