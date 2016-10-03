@@ -4,6 +4,7 @@
  * MIT License
  * github.com/filipelinhares/ress
  */
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 html {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -188,26 +189,32 @@ audio, canvas, progress, video {
   color: #fff;
   text-shadow: none; }
 
-.page-header .brand, .page-header .brand-product .brand-powered, .page-header .page-menu {
+.page-header .brand-logo a, .page-header .brand-product .brand-powered {
   text-indent: -9999px; }
 
-.page-header .gnb-menu::after {
+.page-header .gnb-menu::after, .feature-supreme-comfort .feature__list::after {
   content: '';
   display: block;
   clear: both; }
 
+.page-header .gnb-menu a {
+  text-transform: uppercase; }
+
+.page-header .brand-product {
+  background-size: cover;
+  background-repeat: no-repeat; }
+
 h1, h2, h3, a {
-  font-family: "futura-pt", sans-serif; }
+  font-family: "proxima-nova-alt",sans-serif; }
 
 body, p {
   font-family: "jaf-facitweb", sans-serif; }
 
 h1, h2, h3, a {
-  font-weight: 500;
-  letter-spacing: -0.03em; }
+  letter-spacing: -0.01em; }
 
 h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 80px; }
 
 h3 {
@@ -215,8 +222,11 @@ h3 {
   font-size: 32px; }
 
 body, p {
-  font-size: 21px;
-  font-weight: light; }
+  font-size: 21px; }
+
+html, body {
+  height: 100%;
+  min-height: 100%; }
 
 ul {
   list-style: none; }
@@ -226,34 +236,228 @@ a {
   color: #000; }
 
 .a11y-hidden {
+  display: block;
   width: 1px;
   height: 1px;
   margin-top: -1px;
   text-indent: -9999px;
   visiblity: hidden; }
 
-.page-header .brand-product .brand-name {
-  font-size: 64px;
-  font-weight: 500; }
+.text-hidden {
+  display: block;
+  text-indent: -9999px; }
 
-.page-header .brand-product .brand-powered {
-  display: block; }
+.page-header {
+  position: relative; }
+  .page-header .brand-logo {
+    position: absolute;
+    left: 20px;
+    top: 28px;
+    padding: 12px 10px; }
+    .page-header .brand-logo a {
+      display: block;
+      width: 114px;
+      height: 17px;
+      background-image: url("../assets/img/logo_samsung-galaxy.png");
+      background-size: 114px 17px;
+      background-repeat: no-repeat;
+      background-position: center; }
+  .page-header .brand-product {
+    height: 1080px;
+    background-image: url("../assets/img/gear-vr_kv.jpg");
+    background-size: auto 1080px;
+    background-position: center -50px; }
+    .page-header .brand-product .contianer__product-brand {
+      position: absolute;
+      left: 64%;
+      top: 780px;
+      width: 260px; }
+    .page-header .brand-product .brand-name {
+      display: block;
+      font-size: 68px;
+      font-weight: 600;
+      line-height: 59px; }
+    .page-header .brand-product .brand-powered {
+      display: block;
+      height: 28px;
+      background-image: url("../assets/img/gear-vr_kv_logo.png");
+      background-repeat: no-repeat;
+      background-size: 245px auto;
+      background-position: 6px top; }
+  .page-header .page-menu {
+    position: fixed;
+    top: 26px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+    cursor: pointer; }
+    .page-header .page-menu.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #a7a7a7;
+      transition: all 0.25s; }
+    .page-header .page-menu.active .page-menu-bar {
+      background: #fff; }
+    .page-header .page-menu:hover.active::before {
+      background: #000; }
+    .page-header .page-menu:hover.active .page-menu-bar {
+      transform: scale(0.9);
+      margin-bottom: 5px; }
+    .page-header .page-menu .page-menu-bar {
+      display: block;
+      background: #000;
+      width: 25px;
+      height: 2px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 3px;
+      margin-bottom: 6px;
+      transition: all 0.25s; }
+  .page-header .gnb {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #cdcdcd;
+    padding-left: 60px; }
+  .page-header .gnb-menu li {
+    float: left; }
+  .page-header .gnb-menu a {
+    display: inlien-block;
+    margin-right: 12px;
+    margin-left: 12px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 600; }
+    .page-header .gnb-menu a.active {
+      color: #00b3e3; }
 
-.page-header .gnb {
-  border-bottom: 1px solid #cdcdcd; }
-
-.page-header .gnb-menu li {
-  float: left; }
-
-.page-header .gnb-menu a {
-  display: inlien-block;
-  margin-right: 20px;
-  margin-left: 20px;
-  height: 60px;
-  line-height: 60px;
-  font-size: 15px; }
-  .page-header .gnb-menu a.active {
-    color: #00b3e3; }
+.page-footer {
+  color: #9e9e9e;
+  font-size: 18px; }
 
 .feature__title {
   text-align: center; }
+
+.feature-supreme-comfort {
+  position: relative;
+  height: 2023px;
+  text-align: center; }
+  .feature-supreme-comfort .feature__title {
+    padding: 101px 0 39px; }
+  .feature-supreme-comfort .feature__desc {
+    max-width: 990px;
+    margin: 0 auto;
+    font-size: 21px;
+    line-height: 38px;
+    margin-bottom: 91px; }
+  .feature-supreme-comfort .feature__list {
+    position: absolute;
+    bottom: 151px;
+    width: 100%;
+    text-align: center; }
+    .feature-supreme-comfort .feature__list li:first-child {
+      margin-left: 0; }
+    .feature-supreme-comfort .feature__list li {
+      display: inline-block;
+      width: 360px;
+      margin-left: 69px; }
+    .feature-supreme-comfort .feature__list .list-title {
+      margin-top: 45px;
+      font-size: 32px; }
+    .feature-supreme-comfort .feature__list .list-desc {
+      font-size: 18px; }
+
+.feature-complete-focus {
+  background: #000;
+  color: #fff;
+  background-image: url("../assets/img/gear-vr_focus_bg.jpg"); }
+  .feature-complete-focus .feature__title {
+    padding: 101px 0 39px; }
+  .feature-complete-focus .feature__desc {
+    max-width: 990px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 21px;
+    line-height: 38px;
+    margin-bottom: 91px; }
+  .feature-complete-focus .feature__exprience {
+    height: 1000px; }
+    .feature-complete-focus .feature__exprience .exp-device {
+      text-align: center;
+      overflow: hidden; }
+      .feature-complete-focus .feature__exprience .exp-device img {
+        width: 100%; }
+
+.feature-convenient-control .feature__title {
+  padding: 101px 0 39px; }
+
+.feature-convenient-control .feature__desc {
+  max-width: 990px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 21px;
+  line-height: 38px;
+  margin-bottom: 91px; }
+
+.feature-convenient-control .feature__list {
+  height: 817px;
+  background-image: url("../assets/img/gear-vr_control.jpg");
+  background-size: 100% auto;
+  padding-left: 70%; }
+
+.feature-galaxy-connection {
+  text-align: left; }
+
+.feature-oculus-home {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  border-bottom: 1px solid transparent; }
+  .feature-oculus-home .feature__title {
+    padding: 101px 0 39px; }
+  .feature-oculus-home .feature__desc {
+    max-width: 990px;
+    margin: 0 auto;
+    font-size: 21px;
+    line-height: 38px;
+    margin-bottom: 91px; }
+
+.feature-optimized-for-gear {
+  background: #000;
+  color: #fff;
+  text-align: center; }
+
+.feature-experiences .feature__title {
+  padding: 101px 0 39px; }
+
+.feature-experiences .feature__desc {
+  max-width: 990px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 21px;
+  line-height: 38px;
+  margin-bottom: 91px; }
+
+.feature-stage-is-set .feature__title {
+  padding: 101px 0 39px; }
+
+.feature-stage-is-set .feature__desc {
+  max-width: 990px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 21px;
+  line-height: 38px;
+  margin-bottom: 91px; }
+
+.feature-specification {
+  background: #000;
+  color: #fff; }

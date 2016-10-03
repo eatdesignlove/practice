@@ -1,6 +1,10 @@
 // --------------------
 // 일반 요소 
 // --------------------
+html, body
+  height: 100%
+  min-height: 100%
+
 ul
   list-style: none
 a
@@ -8,44 +12,122 @@ a
   color: #000
 
 .a11y-hidden
+  display: block
   width: 1px
   height: 1px
   margin-top: -1px
   text-indent: -9999px
   visiblity: hidden
 
+.text-hidden
+  display: block
+  text-indent: -9999px
+
+
 // --------------------
 // 헤더 영역 
 // --------------------
 .page-header
-  .brand
-    @extend %text-hidden
-  
+  position: relative
+  .brand-logo
+    position: absolute
+    left: 20px
+    top: 28px
+    padding: 12px 10px
+    a
+      @extend %text-hidden
+      display: block
+      width: 114px
+      height: 17px
+      background-image: url("../assets/img/logo_samsung-galaxy.png")
+      background-size: 114px 17px
+      background-repeat: no-repeat
+      background-position: center
+      
   .brand-product
+    @extend %full-size-bg
+    height: 1080px
+    background-image: url("../assets/img/gear-vr_kv.jpg")
+    background-size: auto 1080px
+    background-position: center -50px
+    .contianer__product-brand
+      position: absolute
+      left: 64%
+      top: 780px      
+      width: 260px
     .brand-name
-      font-size: 64px
-      font-weight: 500
+      display: block
+      font-size: 68px
+      font-weight: 600
+      line-height: 59px
     .brand-powered
       @extend %text-hidden 
       display: block
-    
+      height: 28px
+      background-image: url("../assets/img/gear-vr_kv_logo.png")
+      background-repeat: no-repeat
+      background-size: 245px auto
+      background-position: 6px top
+
   .page-menu
-    @extend %text-hidden
-  
+    position: fixed
+    top: 26px
+    right: 30px
+    width: 48px
+    height: 48px
+    background-size: 48px
+    cursor: pointer
+    &.active
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -1
+        width: 48px
+        height: 48px
+        border-radius: 50%
+        background: #a7a7a7
+        transition: all 0.25s
+      .page-menu-bar
+        background: #fff
+    &:hover.active::before
+      background: #000
+    &:hover.active  
+      .page-menu-bar
+        transform: scale(0.9)
+        margin-bottom: 5px
+    .page-menu-bar
+      display: block
+      background: #000
+      width: 25px
+      height: 2px
+      margin-right: auto
+      margin-left: auto
+      margin-top: 3px
+      margin-bottom: 6px
+      transition: all 0.25s
   .gnb
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
     border-bottom: 1px solid #cdcdcd
+    padding-left: 60px
 
   .gnb-menu
     @extend %clearfix
     li
       float: left
     a
+      @extend %uppercase
       display: inlien-block
-      margin-right: 20px
-      margin-left: 20px
+      margin-right: 12px
+      margin-left: 12px
       height: 60px
       line-height: 60px
-      font-size: 15px
+      font-size: 14px
+      font-weight: 600      
       &.active
         color: #00b3e3
 
@@ -53,5 +135,11 @@ a
 // --------------------
 // 푸터 영역 
 // --------------------
+.page-footer
+  color: #9e9e9e
+  font-size: 18px
 
 
+  .btn__a11y-color-contrast
+    border: 1px solid rgb(189, 189, 189)
+    
