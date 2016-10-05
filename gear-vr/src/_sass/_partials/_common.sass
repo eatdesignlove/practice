@@ -4,13 +4,13 @@
 html, body
   height: 100%
   min-height: 100%
-
 ul
   list-style: none
 a
   text-decoration: none
   color: #000
-
+img
+  pointer-events: none
 .a11y-hidden
   display: block
   width: 1px
@@ -29,6 +29,7 @@ a
 // --------------------
 .page-header
   position: relative
+  height: 100%
   .brand-logo
     position: absolute
     left: 20px
@@ -46,18 +47,16 @@ a
       
   .brand-product
     @extend %full-size-bg
-    height: 1080px
-    background-image: url("../assets/img/gear-vr_kv.jpg")
-    background-size: auto 1080px
-    background-position: center -50px
+    img
+      height: 810px
     .contianer__product-brand
       position: absolute
       left: 64%
-      top: 780px      
+      top: 560px      
       width: 260px
     .brand-name
       display: block
-      font-size: 68px
+      font-size: 56px
       font-weight: 600
       line-height: 59px
     .brand-powered
@@ -66,7 +65,7 @@ a
       height: 28px
       background-image: url("../assets/img/gear-vr_kv_logo.png")
       background-repeat: no-repeat
-      background-size: 245px auto
+      background-size: 200px auto
       background-position: 6px top
 
   .page-menu
@@ -77,26 +76,18 @@ a
     height: 48px
     background-size: 48px
     cursor: pointer
-    &.active
-      &::before
-        content: ''
-        position: absolute
-        left: 0
-        top: 0
-        z-index: -1
-        width: 48px
-        height: 48px
-        border-radius: 50%
-        background: #a7a7a7
-        transition: all 0.25s
-      .page-menu-bar
-        background: #fff
-    &:hover.active::before
-      background: #000
-    &:hover.active  
-      .page-menu-bar
-        transform: scale(0.9)
-        margin-bottom: 5px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      z-index: -1
+      width: 48px
+      height: 48px
+      border-radius: 50%
+      background: none
+      transition: all 0.25s
+      transform: scale(0.8)
     .page-menu-bar
       display: block
       background: #000
@@ -106,7 +97,22 @@ a
       margin-left: auto
       margin-top: 3px
       margin-bottom: 6px
-      transition: all 0.25s
+      transition: all 0.25s 
+    &:hover  
+      .page-menu-bar
+        transform: scale(0.9)
+        margin-bottom: 5px
+        background: #fff
+      &:hover::before,
+      &:hover.active::before
+        background: #000
+        transform: scale(1)
+    &.active::before
+      background: #a7a7a7
+    &.active .page-menu-bar
+      background: #fff
+
+
   .gnb
     position: absolute
     bottom: 0
@@ -131,15 +137,134 @@ a
       &.active
         color: #00b3e3
 
-
 // --------------------
 // 푸터 영역 
 // --------------------
 .page-footer
+  @extend %font-proxima-nova-a
   color: #9e9e9e
   font-size: 18px
+  button, a 
+    font-size: 12px
+    text-transform: uppercase
+    color: #000
 
-
+  [class^="footer-"]
+    @extend %clearfix
+    width: 100%
+    max-width: 1380px
+    margin-right: auto
+    margin-left: auto
+  .footer-top
+    padding-top: 37px
+    padding-bottom: 56px
   .btn__a11y-color-contrast
+    border: 2px solid #fff01f
+    background: #000
+    color: #fff01f
+    margin-right: 5px
+    cursor: pointer
+  .btn__a11y-color-default
     border: 1px solid rgb(189, 189, 189)
-    
+    cursor: pointer
+  .container__share
+    width: 400px
+    float: left
+    h3
+      font-size: 21px
+      font-weight: 400
+      float: left
+      margin-right: 20px
+      line-height: 40px
+    li
+      float: left
+    a
+      display: block
+      width: 40px
+      height: 40px
+      font-size: 18px
+      color: rgb(189, 189, 189)
+      transition: all 0.15s
+      text-align: center
+      line-height: 40px
+      &:hover 
+        & ::before
+        transform: scale(1.1)
+        &.fa-facebook
+          color: #3a589e
+        &.fa-twitter
+          color: #51abf1
+        &.fa-google-plus
+          color: #DD4B3A
+        &.fa-linkedin-square
+          color: #0477b6
+  .container__utility
+    float: right
+    button[class^="btn__a11y-color-"]
+      width: 30px
+      height: 30px
+      text-align: center
+      line-height: 28px
+  .btn__network-toggle
+    @extend %btn-footer-bordered
+    width: 203px
+    background-image: url("../assets/img/ico_arrow_b.png")
+    background-position: right center
+  .btn__go-site-map
+    @extend %btn-footer-bordered
+    width: 148px
+    background-image: url("../assets/img/ico_arrow_r.png")
+    background-position: right center
+  .btn__go-samsung
+    @extend %btn-footer-bordered
+    width: 190px
+    background-image: url("../assets/img/ico_arrow_r.png")
+    background-position: right center
+
+  .container__network-setting-list
+    display: none
+
+.footer-bottom
+  position: relative
+  .footer-samsung-logo
+    display: block
+    width: 86px
+    height: 28px
+    float: left
+    margin-right: 24px
+    background-image: url("../assets/img/logo_samsung_x2.png")
+    background-size: 86px auto 
+  .copyright, a
+    font-size: 13px
+    color: #666
+  .copyright
+    display: block
+    margin-bottom: 5px
+  .container__sm-links
+    height: 45px
+    li
+      float: left
+    a
+      display: block
+      border-right: 1px solid #bdbdbd
+      padding-right: 12px
+      margin-right: 12px
+    li:last-child a
+      border-right: none
+  .container__add-links
+    position: absolute
+    right: 0
+    bottom: 33px
+    .btn__site-map,
+    .btn__back-to-top
+      height: 20px
+      text-transform: initial
+      font-size: 16px
+      padding-right: 26px
+      background-image: url("../assets/img/c_btn_type3.png")
+      background-size: auto 200%
+    .btn__site-map
+      background-position: bottom right 
+      margin-right: 25px
+    .btn__back-to-top
+      background-position: top right

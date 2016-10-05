@@ -4,7 +4,6 @@
  * MIT License
  * github.com/filipelinhares/ress
  */
-@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 html {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -192,7 +191,7 @@ audio, canvas, progress, video {
 .page-header .brand-logo a, .page-header .brand-product .brand-powered {
   text-indent: -9999px; }
 
-.page-header .gnb-menu::after, .feature-supreme-comfort .feature__list::after {
+.page-header .gnb-menu::after, .page-footer [class^="footer-"]::after, .feature-supreme-comfort .feature__list::after, .feture-vr-gallery .feature__list::after, .feture-vr-gallery .container__experience-text::after {
   content: '';
   display: block;
   clear: both; }
@@ -204,7 +203,7 @@ audio, canvas, progress, video {
   background-size: cover;
   background-repeat: no-repeat; }
 
-h1, h2, h3, a {
+h1, h2, h3, a, .page-footer {
   font-family: "proxima-nova-alt",sans-serif; }
 
 body, p {
@@ -224,6 +223,20 @@ h3 {
 body, p {
   font-size: 21px; }
 
+.page-footer .btn__network-toggle, .page-footer .btn__go-site-map, .page-footer .btn__go-samsung {
+  display: inline-block;
+  border: 1px solid #bdbdbd;
+  text-align: left;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 11px;
+  transition: border 0.25s;
+  cursor: pointer;
+  color: #666;
+  margin-left: 11px; }
+  .page-footer .btn__network-toggle:hover, .page-footer .btn__go-site-map:hover, .page-footer .btn__go-samsung:hover {
+    border-color: #000; }
+
 html, body {
   height: 100%;
   min-height: 100%; }
@@ -234,6 +247,9 @@ ul {
 a {
   text-decoration: none;
   color: #000; }
+
+img {
+  pointer-events: none; }
 
 .a11y-hidden {
   display: block;
@@ -248,7 +264,8 @@ a {
   text-indent: -9999px; }
 
 .page-header {
-  position: relative; }
+  position: relative;
+  height: 100%; }
   .page-header .brand-logo {
     position: absolute;
     left: 20px;
@@ -262,28 +279,25 @@ a {
       background-size: 114px 17px;
       background-repeat: no-repeat;
       background-position: center; }
-  .page-header .brand-product {
-    height: 1080px;
-    background-image: url("../assets/img/gear-vr_kv.jpg");
-    background-size: auto 1080px;
-    background-position: center -50px; }
-    .page-header .brand-product .contianer__product-brand {
-      position: absolute;
-      left: 64%;
-      top: 780px;
-      width: 260px; }
-    .page-header .brand-product .brand-name {
-      display: block;
-      font-size: 68px;
-      font-weight: 600;
-      line-height: 59px; }
-    .page-header .brand-product .brand-powered {
-      display: block;
-      height: 28px;
-      background-image: url("../assets/img/gear-vr_kv_logo.png");
-      background-repeat: no-repeat;
-      background-size: 245px auto;
-      background-position: 6px top; }
+  .page-header .brand-product img {
+    height: 810px; }
+  .page-header .brand-product .contianer__product-brand {
+    position: absolute;
+    left: 64%;
+    top: 560px;
+    width: 260px; }
+  .page-header .brand-product .brand-name {
+    display: block;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 59px; }
+  .page-header .brand-product .brand-powered {
+    display: block;
+    height: 28px;
+    background-image: url("../assets/img/gear-vr_kv_logo.png");
+    background-repeat: no-repeat;
+    background-size: 200px auto;
+    background-position: 6px top; }
   .page-header .page-menu {
     position: fixed;
     top: 26px;
@@ -292,7 +306,7 @@ a {
     height: 48px;
     background-size: 48px;
     cursor: pointer; }
-    .page-header .page-menu.active::before {
+    .page-header .page-menu::before {
       content: '';
       position: absolute;
       left: 0;
@@ -301,15 +315,9 @@ a {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: #a7a7a7;
-      transition: all 0.25s; }
-    .page-header .page-menu.active .page-menu-bar {
-      background: #fff; }
-    .page-header .page-menu:hover.active::before {
-      background: #000; }
-    .page-header .page-menu:hover.active .page-menu-bar {
-      transform: scale(0.9);
-      margin-bottom: 5px; }
+      background: none;
+      transition: all 0.25s;
+      transform: scale(0.8); }
     .page-header .page-menu .page-menu-bar {
       display: block;
       background: #000;
@@ -320,6 +328,17 @@ a {
       margin-top: 3px;
       margin-bottom: 6px;
       transition: all 0.25s; }
+    .page-header .page-menu:hover .page-menu-bar {
+      transform: scale(0.9);
+      margin-bottom: 5px;
+      background: #fff; }
+    .page-header .page-menu:hover:hover::before, .page-header .page-menu:hover:hover.active::before {
+      background: #000;
+      transform: scale(1); }
+    .page-header .page-menu.active::before {
+      background: #a7a7a7; }
+    .page-header .page-menu.active .page-menu-bar {
+      background: #fff; }
   .page-header .gnb {
     position: absolute;
     bottom: 0;
@@ -343,22 +362,142 @@ a {
 .page-footer {
   color: #9e9e9e;
   font-size: 18px; }
+  .page-footer button, .page-footer a {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000; }
+  .page-footer [class^="footer-"] {
+    width: 100%;
+    max-width: 1380px;
+    margin-right: auto;
+    margin-left: auto; }
+  .page-footer .footer-top {
+    padding-top: 37px;
+    padding-bottom: 56px; }
+  .page-footer .btn__a11y-color-contrast {
+    border: 2px solid #fff01f;
+    background: #000;
+    color: #fff01f;
+    margin-right: 5px;
+    cursor: pointer; }
+  .page-footer .btn__a11y-color-default {
+    border: 1px solid #bdbdbd;
+    cursor: pointer; }
+  .page-footer .container__share {
+    width: 400px;
+    float: left; }
+    .page-footer .container__share h3 {
+      font-size: 21px;
+      font-weight: 400;
+      float: left;
+      margin-right: 20px;
+      line-height: 40px; }
+    .page-footer .container__share li {
+      float: left; }
+    .page-footer .container__share a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      color: #bdbdbd;
+      transition: all 0.15s;
+      text-align: center;
+      line-height: 40px; }
+      .page-footer .container__share a:hover {
+        transform: scale(1.1); }
+        .page-footer .container__share a:hover.fa-facebook {
+          color: #3a589e; }
+        .page-footer .container__share a:hover.fa-twitter {
+          color: #51abf1; }
+        .page-footer .container__share a:hover.fa-google-plus {
+          color: #DD4B3A; }
+        .page-footer .container__share a:hover.fa-linkedin-square {
+          color: #0477b6; }
+  .page-footer .container__utility {
+    float: right; }
+    .page-footer .container__utility button[class^="btn__a11y-color-"] {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 28px; }
+  .page-footer .btn__network-toggle {
+    width: 203px;
+    background-image: url("../assets/img/ico_arrow_b.png");
+    background-position: right center; }
+  .page-footer .btn__go-site-map {
+    width: 148px;
+    background-image: url("../assets/img/ico_arrow_r.png");
+    background-position: right center; }
+  .page-footer .btn__go-samsung {
+    width: 190px;
+    background-image: url("../assets/img/ico_arrow_r.png");
+    background-position: right center; }
+  .page-footer .container__network-setting-list {
+    display: none; }
+
+.footer-bottom {
+  position: relative; }
+  .footer-bottom .footer-samsung-logo {
+    display: block;
+    width: 86px;
+    height: 28px;
+    float: left;
+    margin-right: 24px;
+    background-image: url("../assets/img/logo_samsung_x2.png");
+    background-size: 86px auto; }
+  .footer-bottom .copyright, .footer-bottom a {
+    font-size: 13px;
+    color: #666; }
+  .footer-bottom .copyright {
+    display: block;
+    margin-bottom: 5px; }
+  .footer-bottom .container__sm-links {
+    height: 45px; }
+    .footer-bottom .container__sm-links li {
+      float: left; }
+    .footer-bottom .container__sm-links a {
+      display: block;
+      border-right: 1px solid #bdbdbd;
+      padding-right: 12px;
+      margin-right: 12px; }
+    .footer-bottom .container__sm-links li:last-child a {
+      border-right: none; }
+  .footer-bottom .container__add-links {
+    position: absolute;
+    right: 0;
+    bottom: 33px; }
+    .footer-bottom .container__add-links .btn__site-map,
+    .footer-bottom .container__add-links .btn__back-to-top {
+      height: 20px;
+      text-transform: initial;
+      font-size: 16px;
+      padding-right: 26px;
+      background-image: url("../assets/img/c_btn_type3.png");
+      background-size: auto 200%; }
+    .footer-bottom .container__add-links .btn__site-map {
+      background-position: bottom right;
+      margin-right: 25px; }
+    .footer-bottom .container__add-links .btn__back-to-top {
+      background-position: top right; }
 
 .feature__title {
   text-align: center; }
 
 .feature-supreme-comfort {
   position: relative;
-  height: 2023px;
   text-align: center; }
   .feature-supreme-comfort .feature__title {
     padding: 101px 0 39px; }
   .feature-supreme-comfort .feature__desc {
     max-width: 990px;
     margin: 0 auto;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 38px;
     margin-bottom: 91px; }
+  .feature-supreme-comfort .feature-body {
+    height: 1246px; }
+  .feature-supreme-comfort .key-image {
+    width: 802px; }
   .feature-supreme-comfort .feature__list {
     position: absolute;
     bottom: 151px;
@@ -368,11 +507,15 @@ a {
       margin-left: 0; }
     .feature-supreme-comfort .feature__list li {
       display: inline-block;
-      width: 360px;
-      margin-left: 69px; }
+      width: 270px;
+      margin-left: 52px; }
+    .feature-supreme-comfort .feature__list img {
+      width: 100%; }
     .feature-supreme-comfort .feature__list .list-title {
       margin-top: 45px;
-      font-size: 32px; }
+      margin-bottom: 12px;
+      font-size: 32px;
+      font-weight: 600; }
     .feature-supreme-comfort .feature__list .list-desc {
       font-size: 18px; }
 
@@ -386,7 +529,7 @@ a {
     max-width: 990px;
     margin: 0 auto;
     text-align: center;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 38px;
     margin-bottom: 91px; }
   .feature-complete-focus .feature__exprience {
@@ -404,60 +547,378 @@ a {
   max-width: 990px;
   margin: 0 auto;
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 38px;
   margin-bottom: 91px; }
 
-.feature-convenient-control .feature__list {
-  height: 817px;
-  background-image: url("../assets/img/gear-vr_control.jpg");
-  background-size: 100% auto;
-  padding-left: 70%; }
+.feature-convenient-control .feature-figure {
+  position: relative; }
+  .feature-convenient-control .feature-figure .key-image {
+    width: 100%; }
+  .feature-convenient-control .feature-figure .feature__list {
+    position: absolute;
+    top: -20px;
+    left: 949px;
+    text-transform: uppercase; }
+    .feature-convenient-control .feature-figure .feature__list li {
+      margin-bottom: 82px; }
+    .feature-convenient-control .feature-figure .feature__list .list-2 {
+      margin-bottom: 115px; }
+    .feature-convenient-control .feature-figure .feature__list .list-desc {
+      font-size: 20px; }
 
 .feature-galaxy-connection {
-  text-align: left; }
+  position: relative;
+  height: 1005px; }
+  .feature-galaxy-connection .key-image {
+    height: 1005px;
+    position: absolute;
+    right: 0;
+    top: -200px; }
+  .feature-galaxy-connection .feature-head {
+    margin-left: 18.7%; }
+  .feature-galaxy-connection .feature__title {
+    width: 750px;
+    text-align: left;
+    line-height: 1;
+    margin-top: 152px;
+    margin-bottom: 33px; }
+  .feature-galaxy-connection .feature__desc {
+    width: 440px;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 101px; }
+  .feature-galaxy-connection .feature__list {
+    margin-left: 18.7%;
+    text-align: center; }
+    .feature-galaxy-connection .feature__list img {
+      width: 157px; }
+    .feature-galaxy-connection .feature__list li {
+      float: left; }
+  .feature-galaxy-connection [class^="list-item-"] {
+    display: block;
+    width: 220px;
+    text-align: center; }
+  .feature-galaxy-connection .list-item-title {
+    font-weight: 900;
+    font-size: 28px;
+    margin-bottom: 3px; }
+  .feature-galaxy-connection .list-item-desc {
+    font-size: 20px; }
 
 .feature-oculus-home {
   background: #000;
   color: #fff;
   text-align: center;
   border-bottom: 1px solid transparent; }
-  .feature-oculus-home .feature__title {
-    padding: 101px 0 39px; }
-  .feature-oculus-home .feature__desc {
-    max-width: 990px;
-    margin: 0 auto;
-    font-size: 21px;
-    line-height: 38px;
-    margin-bottom: 91px; }
+  .feature-oculus-home .feature-head {
+    background-image: url("../assets/img/gear-vr_oculus_bg.jpg");
+    background-size: 100% auto; }
+    .feature-oculus-home .feature-head .feature__title {
+      padding: 101px 0 39px; }
+    .feature-oculus-home .feature-head .feature__desc {
+      max-width: 990px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 38px;
+      margin-bottom: 91px; }
+    .feature-oculus-home .feature-head .ref-desc {
+      display: block;
+      margin-top: 34px; }
+  .feature-oculus-home .feature-body {
+    position: relative;
+    height: 709px;
+    background-image: url("../assets/img/gear-vr_oculus_con_bg.jpg");
+    background-size: 100% auto; }
+    .feature-oculus-home .feature-body .key-image {
+      position: absolute;
+      bottom: 237px;
+      left: 0;
+      width: 100%;
+      height: 250px;
+      background-image: url("../assets/img/gear-vr_oculus_con.png");
+      background-size: 949px;
+      background-position: center top; }
 
 .feature-optimized-for-gear {
   background: #000;
   color: #fff;
   text-align: center; }
+  .feature-optimized-for-gear .feature-body {
+    position: relative; }
+  .feature-optimized-for-gear .vr-device {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  .feature-optimized-for-gear .ui-swiper {
+    position: relative;
+    height: 1665px;
+    background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg");
+    background-size: 100% auto;
+    background-position: center bottom; }
+  .feature-optimized-for-gear .swipe-tap {
+    position: absolute;
+    top: 0px;
+    width: 100%; }
+    .feature-optimized-for-gear .swipe-tap li {
+      width: 264px;
+      text-align: center;
+      float: left; }
+  .feature-optimized-for-gear .swiper-controller {
+    position: absolute;
+    top: 250px; }
 
 .feature-experiences .feature__title {
   padding: 101px 0 39px; }
 
 .feature-experiences .feature__desc {
-  max-width: 990px;
+  max-width: 890px;
   margin: 0 auto;
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 38px;
-  margin-bottom: 91px; }
+  margin-bottom: 71px; }
+
+.feature-experiences .feature-body {
+  background: #000;
+  background-image: url("../assets/img/gear-vr_apps.jpg");
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 350px; }
+  .feature-experiences .feature-body .carousel-controller {
+    position: absolute;
+    background: #fff; }
+    .feature-experiences .feature-body .carousel-controller button {
+      position: absolute;
+      width: 44px;
+      height: 120px;
+      border-radius: 2px; }
+    .feature-experiences .feature-body .carousel-controller .btn__prev {
+      left: 30px; }
+    .feature-experiences .feature-body .carousel-controller .btn__next {
+      right: 30px; }
+  .feature-experiences .feature-body .carousel-contents {
+    background: #999;
+    height: 615px; }
+  .feature-experiences .feature-body .feature-list {
+    text-align: center; }
+  .feature-experiences .feature-body .feature-list li {
+    display: inline-block;
+    width: 179px;
+    height: 99px;
+    background-size: cover;
+    opacity: 0.9; }
+  .feature-experiences .feature-body .feature-list li:nth-child(1) {
+    background-image: url("../assets/img/gear-vr_territory_list01.gif"); }
+  .feature-experiences .feature-body .feature-list li:nth-child(2) {
+    background-image: url("../assets/img/gear-vr_territory_list02.gif"); }
+  .feature-experiences .feature-body .feature-list li:nth-child(3) {
+    background-image: url("../assets/img/gear-vr_territory_list03.gif"); }
+  .feature-experiences .feature-body .feature-list li:nth-child(4) {
+    background-image: url("../assets/img/gear-vr_territory_list04.gif"); }
+  .feature-experiences .feature-body .feature-list li:nth-child(5) {
+    background-image: url("../assets/img/gear-vr_territory_list05.gif"); }
 
 .feature-stage-is-set .feature__title {
-  padding: 101px 0 39px; }
+  padding: 101px 0 42px; }
 
 .feature-stage-is-set .feature__desc {
   max-width: 990px;
   margin: 0 auto;
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 38px;
-  margin-bottom: 91px; }
+  margin-bottom: 49px; }
+
+.feature-stage-is-set .container__links {
+  text-align: center;
+  margin-bottom: 76px; }
+  .feature-stage-is-set .container__links a {
+    color: #25b4e1;
+    font-size: 18px;
+    font-weight: 600; }
+  .feature-stage-is-set .container__links a:first-child {
+    margin-right: 50px; }
+  .feature-stage-is-set .container__links span {
+    font-size: 32px;
+    position: relative;
+    top: 4px;
+    left: 10px; }
+
+.feature-stage-is-set .feature-experience {
+  text-align: center;
+  position: relative;
+  height: 0;
+  padding-bottom: 631px; }
+  .feature-stage-is-set .feature-experience [class^="item-"] {
+    position: relative;
+    margin-right: 60px; }
+  .feature-stage-is-set .feature-experience .item-g360 {
+    bottom: 250px;
+    width: 196px;
+    margin-bottom: -98px; }
+  .feature-stage-is-set .feature-experience .item-gnote {
+    bottom: 250px;
+    width: 255px;
+    margin-bottom: -229px; }
+  .feature-stage-is-set .feature-experience .item-gear {
+    width: 305px;
+    margin-right: 0; }
+
+.feture-vr-gallery .container__experience-text {
+  padding: 50px 0 120px;
+  width: 920px;
+  margin: 0 auto; }
+
+.feture-vr-gallery .feature__desc {
+  width: 650px;
+  font-size: 18px;
+  float: left;
+  line-height: 1.8; }
+
+.feture-vr-gallery .btn__go-gallery {
+  display: block;
+  float: right;
+  width: 220px;
+  height: 58px;
+  border: 1px solid #a5a5a5;
+  border-radius: 29px;
+  color: #333;
+  text-align: center;
+  line-height: 58px;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: all 0.5s; }
+  .feture-vr-gallery .btn__go-gallery:hover {
+    background: #8c8e90;
+    border-color: #8c8e90;
+    color: #fff; }
+
+.feture-vr-gallery .gallery-1 {
+  width: 62%;
+  height: 520px;
+  background-image: url("../assets/img/gear-vr_gallery_img01.jpg");
+  background-size: cover;
+  float: left; }
+
+.feture-vr-gallery .gallery-2 {
+  width: 38%;
+  height: 260px;
+  background-image: url("../assets/img/gear-vr_gallery_img02.jpg");
+  background-size: cover;
+  float: left; }
+
+.feture-vr-gallery .gallery-3 {
+  width: 38%;
+  height: 260px;
+  background-image: url("../assets/img/gear-vr_gallery_img03.jpg");
+  background-size: cover;
+  float: left; }
 
 .feature-specification {
-  background: #000;
-  color: #fff; }
+  background: #1b1b24;
+  color: #fff;
+  text-align: center;
+  padding-top: 156px;
+  padding-bottom: 64px; }
+  .feature-specification figure {
+    width: 878px;
+    margin: 0 auto; }
+    .feature-specification figure img {
+      width: 100%; }
+  .feature-specification .other-features {
+    width: 1024px;
+    height: 394px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 15px; }
+    .feature-specification .other-features [class^="other-spec-"] {
+      width: 264px;
+      height: 197px;
+      float: left;
+      background-size: 50px auto;
+      padding-top: 62px; }
+      .feature-specification .other-features [class^="other-spec-"] h3 {
+        font-size: 24px;
+        font-weight: 300; }
+      .feature-specification .other-features [class^="other-spec-"] p {
+        margin-top: 13px;
+        font-size: 12px;
+        font-weight: 200;
+        color: #959595;
+        line-height: 1.8; }
+    .feature-specification .other-features .other-spec-01 {
+      background-image: url("../assets/img/ico01.png"); }
+    .feature-specification .other-features .other-spec-02 {
+      width: 279px;
+      background-image: url("../assets/img/ico18.png"); }
+    .feature-specification .other-features .other-spec-03 {
+      width: 279px;
+      background-image: url("../assets/img/ico19.png");
+      padding-top: 62px; }
+    .feature-specification .other-features .other-spec-04 {
+      width: 164px;
+      background-image: url("../assets/img/ico14.png");
+      padding-top: 62px; }
+    .feature-specification .other-features .other-spec-05 {
+      background-image: url("../assets/img/ico20.png");
+      padding-top: 62px; }
+    .feature-specification .other-features .other-spec-06 {
+      background-image: url("../assets/img/ico21.png");
+      padding-top: 62px; }
+  .feature-specification .front-view,
+  .feature-specification .side-view {
+    position: relative; }
+    .feature-specification .front-view h3,
+    .feature-specification .side-view h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 4px; }
+    .feature-specification .front-view p,
+    .feature-specification .side-view p {
+      font-size: 12px;
+      color: #959595; }
+    .feature-specification .front-view [class^="list-item-"],
+    .feature-specification .side-view [class^="list-item-"] {
+      position: absolute;
+      background: #1b1b24;
+      text-align: left;
+      padding-right: 20px; }
+  .feature-specification .front-view {
+    margin-bottom: 230px; }
+    .feature-specification .front-view .list-item-1 {
+      left: 20px;
+      top: -45px;
+      text-align: right; }
+    .feature-specification .front-view .list-item-2 {
+      left: 110px; }
+    .feature-specification .front-view .list-item-3 {
+      left: 265px; }
+    .feature-specification .front-view .list-item-4 {
+      left: 560px; }
+  .feature-specification .side-view {
+    margin-bottom: 130px; }
+    .feature-specification .side-view .list-item-1 {
+      top: 20px;
+      left: 230px; }
+    .feature-specification .side-view .list-item-2 {
+      top: -40px;
+      left: 505px;
+      text-align: right; }
+    .feature-specification .side-view .list-item-3 {
+      top: -40px;
+      left: 605px;
+      text-align: right; }
+    .feature-specification .side-view .list-item-4 {
+      top: -40px;
+      left: 705px;
+      text-align: right; }
+    .feature-specification .side-view .list-item-5 {
+      bottom: 20px;
+      left: 250px; }
+    .feature-specification .side-view .list-item-6 {
+      bottom: -60px;
+      left: 465px;
+      text-align: right; }

@@ -8,16 +8,19 @@
 // --------------------
 .feature-supreme-comfort
   position: relative
-  height: 2023px
   text-align: center
   .feature__title
     padding: 101px 0 39px
   .feature__desc
     max-width: 990px
     margin: 0 auto
-    font-size: 21px
+    font-size: 18px
     line-height: 38px
     margin-bottom: 91px
+  .feature-body
+    height: 1246px
+  .key-image
+    width: 802px
   .feature__list
     @extend %clearfix
     position: absolute
@@ -28,11 +31,16 @@
       margin-left: 0
     li
       display: inline-block
-      width: 360px
-      margin-left: 69px
+      width: 270px
+      margin-left: 52px
+    img
+      width: 100%
     .list-title
       margin-top: 45px
+      margin-bottom: 12px
       font-size: 32px
+      font-weight: 600
+
     .list-desc
       font-size: 18px
 
@@ -50,7 +58,7 @@
     max-width: 990px
     margin: 0 auto
     text-align: center
-    font-size: 21px
+    font-size: 18px
     line-height: 38px
     margin-bottom: 91px
 
@@ -73,22 +81,68 @@
     max-width: 990px
     margin: 0 auto
     text-align: center
-    font-size: 21px
+    font-size: 18px
     line-height: 38px
     margin-bottom: 91px  
-  .feature__list
-    height: 817px
-    background-image: url("../assets/img/gear-vr_control.jpg")
-    background-size: 100% auto
-    padding-left: 70%
+  .feature-figure
+    position: relative
+    .key-image
+      width: 100%
+  
+    .feature__list
+      position: absolute
+      top: -20px
+      left: 949px
+      text-transform: uppercase
+      li
+        margin-bottom: 82px
+      .list-2
+        margin-bottom: 115px
+      .list-desc
+        font-size: 20px
 
 // --------------------
 // Galaxy Connection 
 // --------------------
 .feature-galaxy-connection
-  text-align: left
-
-
+  position: relative
+  height: 1005px
+  .key-image
+    height: 1005px
+    position: absolute
+    right: 0
+    top: -200px
+  .feature-head
+    margin-left: 18.7%
+  .feature__title
+    width: 750px
+    text-align: left
+    line-height: 1
+    margin-top: 152px
+    margin-bottom: 33px
+  .feature__desc
+    width: 440px
+    font-size: 20px
+    line-height: 1.8
+    margin-bottom: 101px
+  .feature__list
+    margin-left: 18.7%
+    text-align: center
+    img
+      width: 157px
+    li
+      float: left
+  [class^="list-item-"]
+    display: block
+    width: 220px
+    text-align: center
+  .list-item-title
+    font-weight: 900
+    font-size: 28px
+    margin-bottom: 3px
+  .list-item-desc 
+    font-size: 20px
+  
 // --------------------
 // Oculus Home
 // --------------------
@@ -97,14 +151,34 @@
   color: #fff
   text-align: center
   border-bottom: 1px solid transparent
-  .feature__title
-    padding: 101px 0 39px
-  .feature__desc
-    max-width: 990px
-    margin: 0 auto
-    font-size: 21px
-    line-height: 38px
-    margin-bottom: 91px  
+  .feature-head
+    background-image: url("../assets/img/gear-vr_oculus_bg.jpg")
+    background-size: 100% auto
+    .feature__title
+      padding: 101px 0 39px
+    .feature__desc
+      max-width: 990px
+      margin: 0 auto
+      font-size: 18px
+      line-height: 38px
+      margin-bottom: 91px
+    .ref-desc
+      display: block  
+      margin-top: 34px
+  .feature-body
+    position: relative
+    height: 709px
+    background-image: url("../assets/img/gear-vr_oculus_con_bg.jpg")
+    background-size: 100% auto
+    .key-image
+      position: absolute
+      bottom: 237px
+      left: 0
+      width: 100%
+      height: 250px
+      background-image: url("../assets/img/gear-vr_oculus_con.png") 
+      background-size: 949px
+      background-position: center top
 
 // --------------------
 // Optimized-for-gear 
@@ -113,7 +187,31 @@
   background: #000
   color: #fff
   text-align: center
+  .feature-body
+    position: relative
+  .vr-device
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+  .ui-swiper
+    position: relative
+    height: 1665px
+    background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg")
+    background-size: 100% auto
+    background-position: center bottom
+  .swipe-tap
+    position: absolute
+    top: 0px
+    width: 100%
+    li
+      width: 264px
+      text-align: center
+      float: left
 
+  .swiper-controller
+    position: absolute
+    top: 250px
 
 // --------------------
 // Experiences
@@ -122,38 +220,260 @@
   .feature__title
     padding: 101px 0 39px
   .feature__desc
-    max-width: 990px
+    max-width: 890px
     margin: 0 auto
     text-align: center
-    font-size: 21px
+    font-size: 18px
     line-height: 38px
-    margin-bottom: 91px 
-
+    margin-bottom: 71px 
+  .feature-body
+    background: #000
+    background-image: url("../assets/img/gear-vr_apps.jpg")
+    background-size: 100% auto
+    background-position: center bottom
+    background-repeat: no-repeat
+    padding-bottom: 350px
+    .ui-carousel
+    .carousel-controller
+      position: absolute
+      background: #fff
+      button
+        position: absolute
+        width: 44px
+        height: 120px
+        border-radius: 2px
+      .btn__prev
+        left: 30px
+      .btn__next
+        right: 30px
+    .carousel-contents
+      background: #999
+      height: 615px
+    .feature-list
+      text-align: center
+    .feature-list li
+      display: inline-block
+      width: 179px
+      height: 99px
+      background-size: cover
+      opacity: 0.9      
+    .feature-list li:nth-child(1)
+      background-image: url("../assets/img/gear-vr_territory_list01.gif")
+    .feature-list li:nth-child(2)
+      background-image: url("../assets/img/gear-vr_territory_list02.gif")
+    .feature-list li:nth-child(3)
+      background-image: url("../assets/img/gear-vr_territory_list03.gif")
+    .feature-list li:nth-child(4)
+      background-image: url("../assets/img/gear-vr_territory_list04.gif")
+    .feature-list li:nth-child(5)
+      background-image: url("../assets/img/gear-vr_territory_list05.gif")
 
 // --------------------
 // Stage is set
 // --------------------
 .feature-stage-is-set
+  
   .feature__title
-    padding: 101px 0 39px
+    padding: 101px 0 42px
   .feature__desc
     max-width: 990px
     margin: 0 auto
     text-align: center
-    font-size: 21px
+    font-size: 18px
     line-height: 38px
-    margin-bottom: 91px 
-
+    margin-bottom: 49px 
+  .container__links
+    text-align: center
+    margin-bottom: 76px
+    a
+      color: #25b4e1
+      font-size: 18px
+      font-weight: 600
+    a:first-child
+      margin-right: 50px
+    span
+     font-size: 32px
+     position: relative
+     top: 4px
+     left: 10px
+  .feature-experience
+    text-align: center
+    position: relative
+    height: 0
+    padding-bottom: 631px
+    [class^="item-"]
+      position: relative
+      margin-right: 60px
+    .item-g360
+      bottom: 250px
+      width: 196px
+      margin-bottom: -98px
+    .item-gnote
+      bottom: 250px
+      width: 255px
+      margin-bottom: -229px
+    .item-gear
+      width: 305px
+      margin-right: 0
 
 // --------------------
 // VR Gallary 
 // --------------------
 .feture-vr-gallery
+  .feature__list
+    @extend %clearfix
+  .container__experience-text
+    @extend %clearfix
+    padding: 50px 0 120px
+    width: 920px
+    margin: 0 auto
+  .feature__desc
+    width: 650px
+    font-size: 18px
+    float: left
+    line-height: 1.8
+  .btn__go-gallery
+    display: block
+    float: right
+    width: 220px
+    height: 58px
+    border: 1px solid #a5a5a5
+    border-radius: 29px
+    color: #333
+    text-align: center
+    line-height: 58px
+    text-transform: uppercase
+    font-size: 18px
+    transition: all 0.5s
+    &:hover
+      background: #8c8e90
+      border-color: #8c8e90
+      color: #fff
+  .gallery-1
+    width: 62%
+    height: 520px
+    background-image: url("../assets/img/gear-vr_gallery_img01.jpg")
+    background-size: cover 
+    float: left
+  .gallery-2
+    width: 38%
+    height: 260px
+    background-image: url("../assets/img/gear-vr_gallery_img02.jpg")
+    background-size: cover 
+    float: left
+  .gallery-3
+    width: 38%
+    height: 260px
+    background-image: url("../assets/img/gear-vr_gallery_img03.jpg")
+    background-size: cover 
+    float: left
 
-    
 // --------------------
 // Specification 
 // --------------------
 .feature-specification
-  background: #000
+  background: #1b1b24
   color: #fff
+  text-align: center
+  padding-top: 156px
+  padding-bottom: 64px
+  figure
+    width: 878px
+    margin: 0 auto
+    img
+      width: 100%
+  .other-features
+    width: 1024px
+    height: 394px 
+    margin: 0 auto
+    text-align: left
+    padding-left: 15px
+    [class^="other-spec-"]
+      width: 264px
+      height: 197px
+      float: left
+      background-size: 50px auto
+      padding-top: 62px
+      h3
+        font-size: 24px
+        font-weight: 300
+      p
+        margin-top: 13px
+        font-size: 12px
+        font-weight: 200
+        color: #959595
+        line-height: 1.8
+    .other-spec-01
+      background-image: url("../assets/img/ico01.png")
+    .other-spec-02
+      width: 279px
+      background-image: url("../assets/img/ico18.png")
+    .other-spec-03
+      width: 279px
+      background-image: url("../assets/img/ico19.png")
+      padding-top: 62px
+    .other-spec-04
+      width: 164px
+      background-image: url("../assets/img/ico14.png")
+      padding-top: 62px
+    .other-spec-05
+      background-image: url("../assets/img/ico20.png")
+      padding-top: 62px
+    .other-spec-06
+      background-image: url("../assets/img/ico21.png")
+      padding-top: 62px
+      
+  .front-view,
+  .side-view
+    position: relative
+
+    h3
+      font-size: 24px
+      font-weight: 500
+      margin-bottom: 4px
+    p
+      font-size: 12px
+      color: #959595
+    [class^="list-item-"]
+      position: absolute
+      background: #1b1b24
+      text-align: left
+      padding-right: 20px
+  .front-view
+    margin-bottom: 230px
+    .list-item-1
+      left: 20px
+      top:  -45px
+      text-align: right
+    .list-item-2
+      left: 110px
+    .list-item-3
+      left: 265px
+    .list-item-4
+      left: 560px
+
+  .side-view
+    margin-bottom: 130px
+    .list-item-1
+      top: 20px
+      left: 230px
+    .list-item-2
+      top: -40px
+      left: 505px
+      text-align: right
+    .list-item-3
+      top: -40px
+      left: 605px
+      text-align: right
+    .list-item-4
+      top: -40px
+      left: 705px
+      text-align: right
+    .list-item-5
+      bottom: 20px
+      left: 250px
+    .list-item-6
+      bottom: -60px
+      left: 465px
+      text-align: right
+
