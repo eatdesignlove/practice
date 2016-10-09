@@ -11,6 +11,7 @@ a
   color: #000
 img
   pointer-events: none
+  user-select: none
 .a11y-hidden
   display: block
   width: 1px
@@ -18,7 +19,6 @@ img
   margin-top: -1px
   text-indent: -9999px
   visiblity: hidden
-
 .text-hidden
   display: block
   text-indent: -9999px
@@ -76,6 +76,7 @@ img
     height: 48px
     background-size: 48px
     cursor: pointer
+    z-index: 100
     &::before
       content: ''
       position: absolute
@@ -203,7 +204,7 @@ img
     button[class^="btn__a11y-color-"]
       width: 30px
       height: 30px
-      text-align: center
+    a[class^="btn__a11y-color-"]
       line-height: 28px
   .btn__network-toggle
     @extend %btn-footer-bordered
@@ -223,7 +224,6 @@ img
 
   .container__network-setting-list
     display: none
-
 .footer-bottom
   position: relative
   .footer-samsung-logo

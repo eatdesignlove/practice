@@ -15,15 +15,16 @@
     max-width: 990px
     margin: 0 auto
     font-size: 18px
-    line-height: 38px
+    line-height: 1.8
     margin-bottom: 91px
   .feature-body
-    height: 1246px
+    height: 1300px
   .key-image
     width: 802px
   .feature__list
     @extend %clearfix
-    position: absolute
+    padding-top: 84px
+    position: absoluteß
     bottom: 151px
     width: 100%
     text-align: center
@@ -50,8 +51,7 @@
 .feature-complete-focus
   background: #000
   color: #fff
-  background-image: url("../assets/img/gear-vr_focus_bg.jpg")
-
+  // background-image: url("../assets/img/gear-vr_focus_bg.jpg")
   .feature__title
     padding: 101px 0 39px
   .feature__desc
@@ -61,16 +61,26 @@
     font-size: 18px
     line-height: 38px
     margin-bottom: 91px
-
   .feature__exprience
-    height: 1000px
-    .exp-background
+    height: 920px
     .exp-device
       text-align: center
       overflow: hidden
-      img
+      position: relative
+      .device
         width: 100%
-
+        position: relative
+        z-index: 10
+      .lense-left
+        position: absolute
+        width: 17%
+        right: 49%
+        top: 30%
+      .lense-right
+        position: absolute
+        width: 17%
+        left: 49%
+        top: 30%
 // --------------------
 // Convenient Control
 // --------------------
@@ -88,16 +98,20 @@
     position: relative
     .key-image
       width: 100%
-  
     .feature__list
       position: absolute
       top: -20px
       left: 949px
-      text-transform: uppercase
+      padding-left: 20px
+      background: #fff
       li
-        margin-bottom: 82px
+        margin-bottom: 58px
+      h3
+        font-size: 28px
+        margin-bottom: 3px
+        text-transform: uppercase
       .list-2
-        margin-bottom: 115px
+        margin-bottom: 90px
       .list-desc
         font-size: 20px
 
@@ -132,6 +146,8 @@
       width: 157px
     li
       float: left
+  .feature__list li:first-child figure
+      margin-left: -30px
   [class^="list-item-"]
     display: block
     width: 220px
@@ -189,30 +205,89 @@
   text-align: center
   .feature-body
     position: relative
+    width: 100%
+    overflow: hidden
   .vr-device
     position: absolute
     top: 0
     left: 0
     width: 100%
+    z-index: 20
   .ui-swiper
     position: relative
-    height: 1665px
+    height: 1530px
     background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg")
     background-size: 100% auto
     background-position: center bottom
+  .swipe-list
+    padding-top: 640px
+    text-align: center
+    overflow: hidden
+    img
+      width: 737px
+    p
+      width: 850px
+      margin: 210px auto 0
+      color: #000
+      font-size: 18px
+      line-height: 1.8
+    li
+      width: 100%
+      position: absolute
+    li:nth-child(1)
+      left: 0
+    li:nth-child(2)
+      left: 100%
   .swipe-tap
     position: absolute
-    top: 0px
+    top: 1350px
     width: 100%
+    text-align: center
+    z-index: 30
     li
-      width: 264px
+      display: inline-block
+      width: 305px
       text-align: center
-      float: left
-
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 24px
+      position: relative
+    li:first-child
+      padding-right: 20px
+      &::after
+        content: ''
+        display: block
+        width: 2px
+        height: 18px
+        background: #dedede
+        position: absolute
+        right: 0
+        top: 8px
+    a:hover,
+    a.active
+      color: #00b3e3
+      cursor: pointer
   .swiper-controller
     position: absolute
-    top: 250px
-
+    width: 100%
+    top: 875px
+    .btn__prev,
+    .btn__next
+      position: absolute
+      width: 44px
+      height: 120px
+      background: rgba(255,255,255,0.1)
+      cursor: pointer
+      color: #cacaca
+      z-index: 30
+      font-size: 36px
+      &:hover
+        color: #fff
+    .btn__prev
+      left: 30px
+    .btn__next
+      right: 30px
+    
 // --------------------
 // Experiences
 // --------------------
@@ -234,6 +309,30 @@
     background-repeat: no-repeat
     padding-bottom: 350px
     .ui-carousel
+    .carousel-content-desc
+      text-align: center
+      color: #fff
+      .title
+        text-transform: uppercase
+      .category
+        text-transform: initial
+        display: inline-block
+        margin-left: 48px
+        position: relative
+        &::before
+          content: ''
+          display: block
+          width: 1px
+          height: 15px
+          background: #5e5d5c
+          position: absolute
+          top: 8px
+          left: -24px
+      .desc
+        width: 920px
+        margin: 10px auto 60px
+        font-size: 16px
+        font-weight: 100
     .carousel-controller
       position: absolute
       background: #fff
@@ -247,10 +346,27 @@
       .btn__next
         right: 30px
     .carousel-contents
-      background: #999
       height: 615px
+      width: 100%
+      overflow: hidden
+      li
+        background-size: cover
+        position: absolute
+        width: 100%
+        height: 100%
+      li:nth-child(1)
+        background-image: url("../assets/img/gear-vr_territory_list01_slide01.jpg")
+      li:nth-child(2)
+        background-image: url("../assets/img/gear-vr_territory_list02_slide01.jpg")      
+      li:nth-child(3)
+        background-image: url("../assets/img/gear-vr_territory_list03_slide01.jpg")
+      li:nth-child(4)
+        background-image: url("../assets/img/gear-vr_territory_list04_slide01.jpg")
+      li:nth-child(5)
+        background-image: url("../assets/img/gear-vr_territory_list05_slide01.jpg")
     .feature-list
       text-align: center
+      padding-top: 48px
     .feature-list li
       display: inline-block
       width: 179px
@@ -267,7 +383,13 @@
       background-image: url("../assets/img/gear-vr_territory_list04.gif")
     .feature-list li:nth-child(5)
       background-image: url("../assets/img/gear-vr_territory_list05.gif")
-
+    
+    .carousel-content-desc
+      position: absolute
+      width: 100%
+      margin-top: -100px
+      h4
+        font-size: 28px
 // --------------------
 // Stage is set
 // --------------------

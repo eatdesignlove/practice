@@ -1,0 +1,228 @@
+/* File Uploader @eatdesignlove */
+
+h1 {
+  font-family: "arial", sans-serif;
+  padding-left: 50px;
+  position: relative;
+}
+h1::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 42px;
+  height: 42px;
+  background-image: url("../img/logo.png");
+  background-size: 42px;
+  left: 0;
+  top: -4px;      
+}
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  background: #f7f7f7;
+  border-radius: 3px;
+  color: #ccc;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.placeholder img {
+  display: block;
+  max-width: 500px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+.placeholder p {
+  line-height: 400px
+}
+.carousel {
+  position: relative;
+}
+.carousel__imgs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.carousel__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  overflow: hidden; 
+}
+
+.carousel button[class^="btn__"] {
+  position: absolute;
+  top: 50%;
+  margin-top: -60px;
+  display: block;
+  width: 40px;
+  height: 120px;
+  border: none;
+  border-radius: 2px;
+  background: #f2f2f2;
+  color: #232323;
+  cursor: pointer;
+  transition: background 0.25s;
+  z-index: 10
+}
+.carousel button[class^="btn__"]:hover {
+  background: #ccc;
+  outline: none;
+}
+.carousel button[class^="btn__"]:active {
+  background: #111;
+  color: #fff;
+  outline: none;
+}
+.carousel .btn__prev {
+  left: -50px;
+}
+.carousel .btn__next {
+  right: -50px;
+}
+
+
+.comp__uploader {
+  display: block;
+  padding: 10px 0;
+}
+.btn__submit {
+  position: relative;
+  display: block;
+  width: 120px;
+  height: 36px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #EF5149;
+  border-radius: 18px;
+  line-height: 32px;
+  color: #454545;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.25s;
+  padding: 0;
+  cursor: pointer;
+}
+.btn__submit:focus,
+.btn__submit:hover {
+  background: #EF5149;
+  color: #fff;
+  outline: none;
+}
+.btn__submit.active {
+  background: #EF5149;
+  color: #fff;
+}
+
+.img-container {
+  position: relative;
+  height: 400px;
+}
+
+.btn_remove {
+  width: 80px;
+  height: 24px;
+  background: #232323;
+  color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn_remove:hover,
+.btn_remove:focus {
+  background: #EF5149;
+  color: #fff;
+}
+
+/* Loading Bar */
+.loader {
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  margin: 0 auto;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+@media screen and ( max-width: 760px ) {
+  .carousel .carousel_controller .btn__prev,
+  .carousel .carousel_controller .btn__next {
+    top: 100%;
+    width: 100px;
+    height: 42px;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+  }
+  .carousel .carousel_controller .btn__prev {
+    left: 10px;
+  }
+  .carousel .carousel_controller .btn__next {
+    right: 10px;
+  }
+  .placeholder img {
+    max-width: 500px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+  }
+  .img-container {
+    height: 400px
+  }
+}
+

@@ -84,9 +84,10 @@
         <p class="feature__desc">With the Gear VR you get a bigger field of view, smoother images. Incredibly low light leakage and<br> reflection prevention. It's game on.</p>
       </div>
       <div class="feature__exprience">
-        <div class="exp-background"></div>
         <div class="exp-device">
-          <img src="dist/assets/img/gear-vr_focus_vr.png">        
+          <img class="device" src="dist/assets/img/gear-vr_focus_vr.png">        
+          <img class="lense-left" src="dist/assets/img/gear-vr_focus_lense_left.jpg" alt="">
+          <img class="lense-right" src="dist/assets/img/gear-vr_focus_lense_right.jpg" alt="">
         </div>
       </div>
     </section>
@@ -101,15 +102,15 @@
           <ul class="feature__list">
             <li class="list-1">
               <h3 class="list-title">Home Key</h3>
-              <p class="list-desc">Press to return to Oculus Home</p>
+              <p class="list-desc">Press to return to Oculus<br>Home</p>
             </li>
             <li class="list-2">
               <h3 class="list-title">Back Key</h3>
-              <p class="list-desc">Press to return to previous menu</p>
+              <p class="list-desc">Press to return to previous<br>menu</p>
             </li>
             <li class="list-3">
               <h3 class="list-title">Touchpad</h3>
-              <p class="list-desc">Tap or swipe the level surface for easy control</p>
+              <p class="list-desc">Tap or swipe the level<br>surface for easy control</p>
             </li>
           </ul>
         </figcaption>
@@ -163,19 +164,21 @@
         <img class="vr-device" src="dist/assets/img/gear-vr_optimized_vr.png" alt="Optimized for Gear VR">
         <div class="ui-swiper">
           <div class="swiper-controller">
-            <button class="btn__prev"><span>Swipe to Previous Content</span></button>
-            <button class="btn__next"><span>Next to Previous Content</span></button>
+            <button class="btn__prev"><span class="a11y-hidden">Swipe to Previous Content</span><span class="fa fa-angle-left"></span></button>
+            <button class="btn__next"><span class="a11y-hidden">Next to Previous Content</span><span class="fa fa-angle-right"></span></button>
           </div>
           <ul class="swipe-tap">
-            <li><a href="#">Samsung Internet</a></li>
+            <li><a class="active" href="#">Samsung Internet</a></li>
             <li><a href="#">Samsung Gallery</a></li>
           </ul>
           <ul class="swipe-list">
-            <li>
-              Created for optimized web browsing on Gear VR, Samsung Internet makes navigation easy, and prioritize videos and images made for VR. It also makes for a seamless transition from your Galaxy phone to your Gear VR.
+            <li class="active">
+              <img src="dist/assets/img/gear-vr_optimized_slide01.png" alt="">
+              <p>Created for optimized web browsing on Gear VR, Samsung Internet makes navigation easy, and prioritize videos and images made for VR. It also makes for a seamless transition from your Galaxy phone to your Gear VR.</p>
             </li>
             <li>
-              This is the app you want when viewing content created with your Galaxy phone or Gear 360, from photos to 360 videos. Supporting a wide range of formats and features including 2D and 3D video as well as 3D spatial sound and subtitles, it's the ulimate media player for Gear VR.
+              <img src="dist/assets/img/gear-vr_optimized_slide02.png" alt="">
+              <p>This is the app you want when viewing content created with your Galaxy phone or Gear 360, from photos to 360 videos. Supporting a wide range of formats and features including 2D and 3D video as well as 3D spatial sound and subtitles, it's the ulimate media player for Gear VR.</p>
             </li>
           </ul>
         </div>
@@ -209,8 +212,8 @@
           </ol>
         </div>
         <div class="carousel-content-desc">
-          <!-- <h4 class="title">Star Chart <span class="category">Apps</span></h3> -->
-          <!-- <p class="desc">Explore the solar system in this beautiful and accurate real-time simulation. From the Sun to the darkest reaches of Pluto, feel the awe of floating in space around worlds no human has yet set foot on.</p>   -->
+          <h4 class="title">Star Chart <span class="category">Apps</span></h3>
+          <p class="desc">Explore the solar system in this beautiful and accurate real-time simulation. From the Sun to the darkest reaches of Pluto, feel the awe of floating in space around worlds no human has yet set foot on.</p>  
         </div>
         <ul class="feature-list">
           <li><a href="#"><h3 class="a11y-hidden">Star Chart</h3></a></li>

@@ -203,13 +203,13 @@ audio, canvas, progress, video {
   background-size: cover;
   background-repeat: no-repeat; }
 
-h1, h2, h3, a, .page-footer {
+h1, h2, h3, h4, h5, a, .page-footer {
   font-family: "proxima-nova-alt",sans-serif; }
 
 body, p {
   font-family: "jaf-facitweb", sans-serif; }
 
-h1, h2, h3, a {
+h1, h2, h3, h4, h5, a {
   letter-spacing: -0.01em; }
 
 h2 {
@@ -228,7 +228,7 @@ body, p {
   border: 1px solid #bdbdbd;
   text-align: left;
   height: 30px;
-  line-height: 30px;
+  line-height: 26px;
   padding: 0 11px;
   transition: border 0.25s;
   cursor: pointer;
@@ -249,7 +249,8 @@ a {
   color: #000; }
 
 img {
-  pointer-events: none; }
+  pointer-events: none;
+  user-select: none; }
 
 .a11y-hidden {
   display: block;
@@ -305,7 +306,8 @@ img {
     width: 48px;
     height: 48px;
     background-size: 48px;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 100; }
     .page-header .page-menu::before {
       content: '';
       position: absolute;
@@ -417,8 +419,8 @@ img {
     float: right; }
     .page-footer .container__utility button[class^="btn__a11y-color-"] {
       width: 30px;
-      height: 30px;
-      text-align: center;
+      height: 30px; }
+    .page-footer .container__utility a[class^="btn__a11y-color-"] {
       line-height: 28px; }
   .page-footer .btn__network-toggle {
     width: 203px;
@@ -492,14 +494,15 @@ img {
     max-width: 990px;
     margin: 0 auto;
     font-size: 18px;
-    line-height: 38px;
+    line-height: 1.8;
     margin-bottom: 91px; }
   .feature-supreme-comfort .feature-body {
-    height: 1246px; }
+    height: 1300px; }
   .feature-supreme-comfort .key-image {
     width: 802px; }
   .feature-supreme-comfort .feature__list {
-    position: absolute;
+    padding-top: 84px;
+    position: absoluteß;
     bottom: 151px;
     width: 100%;
     text-align: center; }
@@ -521,8 +524,7 @@ img {
 
 .feature-complete-focus {
   background: #000;
-  color: #fff;
-  background-image: url("../assets/img/gear-vr_focus_bg.jpg"); }
+  color: #fff; }
   .feature-complete-focus .feature__title {
     padding: 101px 0 39px; }
   .feature-complete-focus .feature__desc {
@@ -533,12 +535,25 @@ img {
     line-height: 38px;
     margin-bottom: 91px; }
   .feature-complete-focus .feature__exprience {
-    height: 1000px; }
+    height: 920px; }
     .feature-complete-focus .feature__exprience .exp-device {
       text-align: center;
-      overflow: hidden; }
-      .feature-complete-focus .feature__exprience .exp-device img {
-        width: 100%; }
+      overflow: hidden;
+      position: relative; }
+      .feature-complete-focus .feature__exprience .exp-device .device {
+        width: 100%;
+        position: relative;
+        z-index: 10; }
+      .feature-complete-focus .feature__exprience .exp-device .lense-left {
+        position: absolute;
+        width: 17%;
+        right: 49%;
+        top: 30%; }
+      .feature-complete-focus .feature__exprience .exp-device .lense-right {
+        position: absolute;
+        width: 17%;
+        left: 49%;
+        top: 30%; }
 
 .feature-convenient-control .feature__title {
   padding: 101px 0 39px; }
@@ -559,11 +574,16 @@ img {
     position: absolute;
     top: -20px;
     left: 949px;
-    text-transform: uppercase; }
+    padding-left: 20px;
+    background: #fff; }
     .feature-convenient-control .feature-figure .feature__list li {
-      margin-bottom: 82px; }
+      margin-bottom: 58px; }
+    .feature-convenient-control .feature-figure .feature__list h3 {
+      font-size: 28px;
+      margin-bottom: 3px;
+      text-transform: uppercase; }
     .feature-convenient-control .feature-figure .feature__list .list-2 {
-      margin-bottom: 115px; }
+      margin-bottom: 90px; }
     .feature-convenient-control .feature-figure .feature__list .list-desc {
       font-size: 20px; }
 
@@ -595,6 +615,8 @@ img {
       width: 157px; }
     .feature-galaxy-connection .feature__list li {
       float: left; }
+  .feature-galaxy-connection .feature__list li:first-child figure {
+    margin-left: -30px; }
   .feature-galaxy-connection [class^="list-item-"] {
     display: block;
     width: 220px;
@@ -645,29 +667,90 @@ img {
   color: #fff;
   text-align: center; }
   .feature-optimized-for-gear .feature-body {
-    position: relative; }
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
   .feature-optimized-for-gear .vr-device {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; }
+    width: 100%;
+    z-index: 20; }
   .feature-optimized-for-gear .ui-swiper {
     position: relative;
-    height: 1665px;
+    height: 1530px;
     background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg");
     background-size: 100% auto;
     background-position: center bottom; }
+  .feature-optimized-for-gear .swipe-list {
+    padding-top: 640px;
+    text-align: center;
+    overflow: hidden; }
+    .feature-optimized-for-gear .swipe-list img {
+      width: 737px; }
+    .feature-optimized-for-gear .swipe-list p {
+      width: 850px;
+      margin: 210px auto 0;
+      color: #000;
+      font-size: 18px;
+      line-height: 1.8; }
+    .feature-optimized-for-gear .swipe-list li {
+      width: 100%;
+      position: absolute; }
+    .feature-optimized-for-gear .swipe-list li:nth-child(1) {
+      left: 0; }
+    .feature-optimized-for-gear .swipe-list li:nth-child(2) {
+      left: 100%; }
   .feature-optimized-for-gear .swipe-tap {
     position: absolute;
-    top: 0px;
-    width: 100%; }
+    top: 1350px;
+    width: 100%;
+    text-align: center;
+    z-index: 30; }
     .feature-optimized-for-gear .swipe-tap li {
-      width: 264px;
+      display: inline-block;
+      width: 305px;
       text-align: center;
-      float: left; }
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 24px;
+      position: relative; }
+    .feature-optimized-for-gear .swipe-tap li:first-child {
+      padding-right: 20px; }
+      .feature-optimized-for-gear .swipe-tap li:first-child::after {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 18px;
+        background: #dedede;
+        position: absolute;
+        right: 0;
+        top: 8px; }
+    .feature-optimized-for-gear .swipe-tap a:hover,
+    .feature-optimized-for-gear .swipe-tap a.active {
+      color: #00b3e3;
+      cursor: pointer; }
   .feature-optimized-for-gear .swiper-controller {
     position: absolute;
-    top: 250px; }
+    width: 100%;
+    top: 875px; }
+    .feature-optimized-for-gear .swiper-controller .btn__prev,
+    .feature-optimized-for-gear .swiper-controller .btn__next {
+      position: absolute;
+      width: 44px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      color: #cacaca;
+      z-index: 30;
+      font-size: 36px; }
+      .feature-optimized-for-gear .swiper-controller .btn__prev:hover,
+      .feature-optimized-for-gear .swiper-controller .btn__next:hover {
+        color: #fff; }
+    .feature-optimized-for-gear .swiper-controller .btn__prev {
+      left: 30px; }
+    .feature-optimized-for-gear .swiper-controller .btn__next {
+      right: 30px; }
 
 .feature-experiences .feature__title {
   padding: 101px 0 39px; }
@@ -687,6 +770,30 @@ img {
   background-position: center bottom;
   background-repeat: no-repeat;
   padding-bottom: 350px; }
+  .feature-experiences .feature-body .carousel-content-desc {
+    text-align: center;
+    color: #fff; }
+    .feature-experiences .feature-body .carousel-content-desc .title {
+      text-transform: uppercase; }
+    .feature-experiences .feature-body .carousel-content-desc .category {
+      text-transform: initial;
+      display: inline-block;
+      margin-left: 48px;
+      position: relative; }
+      .feature-experiences .feature-body .carousel-content-desc .category::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 15px;
+        background: #5e5d5c;
+        position: absolute;
+        top: 8px;
+        left: -24px; }
+    .feature-experiences .feature-body .carousel-content-desc .desc {
+      width: 920px;
+      margin: 10px auto 60px;
+      font-size: 16px;
+      font-weight: 100; }
   .feature-experiences .feature-body .carousel-controller {
     position: absolute;
     background: #fff; }
@@ -700,10 +807,27 @@ img {
     .feature-experiences .feature-body .carousel-controller .btn__next {
       right: 30px; }
   .feature-experiences .feature-body .carousel-contents {
-    background: #999;
-    height: 615px; }
+    height: 615px;
+    width: 100%;
+    overflow: hidden; }
+    .feature-experiences .feature-body .carousel-contents li {
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .feature-experiences .feature-body .carousel-contents li:nth-child(1) {
+      background-image: url("../assets/img/gear-vr_territory_list01_slide01.jpg"); }
+    .feature-experiences .feature-body .carousel-contents li:nth-child(2) {
+      background-image: url("../assets/img/gear-vr_territory_list02_slide01.jpg"); }
+    .feature-experiences .feature-body .carousel-contents li:nth-child(3) {
+      background-image: url("../assets/img/gear-vr_territory_list03_slide01.jpg"); }
+    .feature-experiences .feature-body .carousel-contents li:nth-child(4) {
+      background-image: url("../assets/img/gear-vr_territory_list04_slide01.jpg"); }
+    .feature-experiences .feature-body .carousel-contents li:nth-child(5) {
+      background-image: url("../assets/img/gear-vr_territory_list05_slide01.jpg"); }
   .feature-experiences .feature-body .feature-list {
-    text-align: center; }
+    text-align: center;
+    padding-top: 48px; }
   .feature-experiences .feature-body .feature-list li {
     display: inline-block;
     width: 179px;
@@ -720,6 +844,12 @@ img {
     background-image: url("../assets/img/gear-vr_territory_list04.gif"); }
   .feature-experiences .feature-body .feature-list li:nth-child(5) {
     background-image: url("../assets/img/gear-vr_territory_list05.gif"); }
+  .feature-experiences .feature-body .carousel-content-desc {
+    position: absolute;
+    width: 100%;
+    margin-top: -100px; }
+    .feature-experiences .feature-body .carousel-content-desc h4 {
+      font-size: 28px; }
 
 .feature-stage-is-set .feature__title {
   padding: 101px 0 42px; }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app="myUploader">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8"/>
+  <title>이미지 업로더 | Firebase x AngularJS </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-cloak  data-ng-controller="uploadController as uploadCtrl">
+  <div class="container">
+    <h1>Image Uploader</h1>
+    <div class="placeholder carousel">
+      <p data-ng-if="uploadCtrl.photos.length === 0">Here is Image Placeholder.</p>
+      <div class="carousel_controller" data-ng-if="uploadCtrl.photos.length > 0">
+        <button class="btn__prev" data-ng-click="uploadCtrl.prevImg()">prev</button>
+        <button class="btn__next" data-ng-click="uploadCtrl.nextImg()">next</button>
+      </div>
+      <div class="carousel__container" data-ng-if="uploadCtrl.photos.length > 0">
+        <div class="carousel__imgs" data-ng-style="{top: uploadCtrl.caro_top+'px'}">
+          <div class="img-container" data-ng-repeat="photo in uploadCtrl.photos">
+            <button class="btn_remove" type="button" data-ng-click="uploadCtrl.remove(photo)">삭제</button>  
+            <img data-ng-src="{{photo.url}}" alt="{{photo.name}}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <form>
+      <input class="comp__uploader" type="file">  
+      <input class="comp__uploader" type="file">  
+      <button type="button" class="btn__submit"  data-ng-click="uploadCtrl.upload()">
+        업로드
+      </button>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function(global, angular){
+      'use strict';
+
+      // 파이어베이스 초기화
+      var config = {
+        apiKey: "AIzaSyDjUmGMhpcmNDtms9haBR_FwxHBYKRmRfc",
+        authDomain: "ui-comp.firebaseapp.com",
+        databaseURL: "https://ui-comp.firebaseio.com",
+        storageBucket: "ui-comp.appspot.com",
+        messagingSenderId: "219308196367"
+      };
+      firebase.initializeApp(config);
+      
+    }(this, this.angular));
+  </script>
+</body>
+</html>
