@@ -290,7 +290,6 @@
       name = className +' '+ name
       return node.setAttribute('class', name);  
     }
-    
   } 
 
   function removeClass(node, name) {
@@ -346,6 +345,22 @@
       }
   }
 
+  // getOffset
+  function getOffset(el) {
+    var elLeft = 0;
+    var elTop = 0;
+    if (el.offsetParent) {
+      do {
+        elLeft += el.offsetLeft;
+        elTop  += el.offsetTop;
+      } while ( el = el.offsetParent);
+      return {
+        offsetLeft: elLeft,
+        offsetTop : elTop
+      }
+    }
+  }
+
 
   // DOM Traversing
   global.queryAll         = queryAll;
@@ -360,7 +375,8 @@
   global.removeNode       = removeNode;
   global.insertAfter      = insertAfter;
   global.prependChild     = prependChild;
-  
+  global.getOffset        = getOffset;
+
   // CSS & Attributes
   global.addClass         = addClass;
   global.removeClass      = removeClass;
