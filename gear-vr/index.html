@@ -162,14 +162,11 @@
       <h2 class="feature__title">Optimized for Gear VR</h2>
       <div class="feature-body">
         <img class="vr-device" src="dist/assets/img/gear-vr_optimized_vr.png" alt="Optimized for Gear VR">
+        <div class="gallaxy-device"></div>
         <div class="ui-swiper">
-          <div class="swiper-controller">
-            <button class="btn__prev"><span class="a11y-hidden">Swipe to Previous Content</span><span class="fa fa-angle-left"></span></button>
-            <button class="btn__next"><span class="a11y-hidden">Next to Previous Content</span><span class="fa fa-angle-right"></span></button>
-          </div>
-          <ul class="swipe-tap">
-            <li><a class="active" href="#">Samsung Internet</a></li>
-            <li><a href="#">Samsung Gallery</a></li>
+          <ul class="swiper-tap">
+            <li><a class="prev active" href="#">Samsung Internet</a></li>
+            <li><a class="next" href="#">Samsung Gallery</a></li>
           </ul>
           <ul class="swipe-list">
             <li class="active">
@@ -191,36 +188,49 @@
         <p class="feature__desc">Gear VR, powered by Oculus, lets you travel across the galaxy, build expansive cities, battle unbelievable monsters, and more. Immerse yourself in entertainment like never before—the ever-expanding collection of amazing Gear VR experiences awaits.</p>
       </div>
       <div class="feature-body">
-        <div class="ui-carousel">
-          <div class="carousel-controller">
-            <button class="btn__prev"><span class="a11y-hidden">Swipe to Previous Content</span></button>
-            <button class="btn__next"><span class="a11y-hidden">Next to Previous Content</span></button>
+        <div class="experience-carousel">
+          <div class="a11y-hidden">
+            <img src="dist/assets/img/gear-vr_territory_list01_slide01.jpg" alt="Star Chart">
+            <img src="dist/assets/img/gear-vr_territory_list02_slide01.jpg" alt="Anshar wars 2">
+            <img src="dist/assets/img/gear-vr_territory_list03_slide01.jpg" alt="Gunjack">
+            <img src="dist/assets/img/gear-vr_territory_list04_slide01.jpg" alt="Land's End">
+            <img src="dist/assets/img/gear-vr_territory_list05_slide01.jpg" alt="Ocean Rift">
           </div>
           <ul class="carousel-contents">
             <li></li>
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
           </ul>
-          <ol class="carousel-indicator">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ol>
         </div>
         <div class="carousel-content-desc">
-          <h4 class="title">Star Chart <span class="category">Apps</span></h3>
-          <p class="desc">Explore the solar system in this beautiful and accurate real-time simulation. From the Sun to the darkest reaches of Pluto, feel the awe of floating in space around worlds no human has yet set foot on.</p>  
+          <div class="carousel-content-desc-wrapper active" data-list-desc-idx="01">
+            <h3 class="title">Star Chart <span class="category">Apps</span></h3>
+            <p class="desc">Explore the solar system in this beautiful and accurate real-time simulation. From the Sun to the darkest reaches of Pluto, feel the awe of floating in space around worlds no human has yet set foot on.</p>  
+          </div>
+          <div class="carousel-content-desc-wrapper" data-list-desc-idx="02">
+            <h3 class="title">Anshar wars 2 <span class="category">Games</span></h3>
+            <p class="desc">Bring the fight to the Nergal in dazzling ship-to-ship battles. See the fight all around you, real-time, for fast-paced and accurate combat awareness. Steer your ship by moving your head, dodging asteroid fields and huge Nergal ships.</p>  
+          </div>
+          <div class="carousel-content-desc-wrapper" data-list-desc-idx="03">
+            <h3 class="title">Gunjack <span class="category">Games</span></h3>
+            <p class="desc">A visually stunning arcade shooter set in the sprawling EVE science fiction universe. Gunjack delivers fast-paced and fully immersive action in a gorgeous setting. It's the ultimate pick-up-and-play VR experience.</p>  
+          </div>
+          <div class="carousel-content-desc-wrapper" data-list-desc-idx="04">
+            <h3 class="title">Land's End <span class="category">Games</span></h3>
+            <p class="desc">Unlock the mysteries of Land's End by exploring spectacular landscapes and using the power of your mind to awaken a lost civilization. Specially created for Gear VR, Land's End doesn't require a controller.</p>  
+          </div>
+          <div class="carousel-content-desc-wrapper" data-list-desc-idx="05">
+            <h3 class="title">Ocean Rift <span class="category">Apps</span></h3>
+            <p class="desc">The world's first VR aquatic safari park. Explore a vivid underwater world full of life including dolphins, sharks and even dinosaurs! Use the gamepad or touch controls to go explore. This full version includes 12 habitats.</p>  
+          </div>
         </div>
         <ul class="feature-list">
-          <li><a href="#"><h3 class="a11y-hidden">Star Chart</h3></a></li>
-          <li><a href="#"><h3 class="a11y-hidden">Anshar wars 2</h3></a></li>
-          <li><a href="#"><h3 class="a11y-hidden">Gunjack</h3></a></li>
-          <li><a href="#"><h3 class="a11y-hidden">Land's End</h3></a></li>
-          <li><a href="#"><h3 class="a11y-hidden">Ocean Rift</h3></a></li>
+          <li class="active"><a href="#" class="text-hidden" data-list-num="01">Star Chart</a></li>
+          <li><a href="#" class="text-hidden" data-list-num="02">Anshar wars 2</a></li>
+          <li><a href="#" class="text-hidden" data-list-num="03">Gunjack</a></li>
+          <li><a href="#" class="text-hidden" data-list-num="04">Land's End</a></li>
+          <li><a href="#" class="text-hidden" data-list-num="05">Ocean Rift</a></li>
         </ul>
       </div>
     </section>
@@ -356,16 +366,21 @@
       </div>
     </div>
   </section>
-<!-- <script src="dist/js/script.js"></script> -->
+<script src="lib/dom-helper.js"></script>
+<script src="lib/scrollmagic/ScrollMagic.min.js"></script>
+<script src="lib/scrollmagic/debug.addIndicators.js"></script>
+
+<script src="src/js/ui-carousel.js"></script>
+<script src="src/js/ui-swiper.js"></script>
+<script src="src/js/ui-parallax.js"></script>
+
 <script src="https://use.typekit.net/jug0evo.js"></script>
 <script></script>
 <script>
   (function(global){
     'use strict';
-    
     // 타입킷 폰트 로드
     try{Typekit.load({ async: true });}catch(e){}
-
   }(this));
 </script>
 </body>

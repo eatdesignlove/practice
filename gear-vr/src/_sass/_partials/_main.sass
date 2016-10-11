@@ -81,6 +81,7 @@
         width: 17%
         left: 49%
         top: 30%
+
 // --------------------
 // Convenient Control
 // --------------------
@@ -210,24 +211,58 @@
   .vr-device
     position: absolute
     top: 0
-    left: 0
-    width: 100%
+    left: 50%
+    width: 1440px
+    height: 740px
+    margin-left: -720px
     z-index: 20
-  .ui-swiper
+  .gallaxy-device
+    width: 558px
+    height: 32px
+    background-image: url("../assets/img/gear-vr_optimized_phone.png") 
+    background-size: 558px 32px
+    position: absolute
+    top: 450px
+    z-index: 30
+    left: 50%
+    transform: translateX(-50%)
+  .ui-swiper      
     position: relative
     height: 1530px
-    background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg")
-    background-size: 100% auto
-    background-position: center bottom
-  .swipe-list
-    padding-top: 640px
-    text-align: center
     overflow: hidden
-    img
-      width: 737px
+    &::before,
+    &::after
+      display: block
+      content: ''
+      position: absolute
+      top: 0
+      width: 100%
+      height: 1530px
+      display: block
+      background-size: auto 1147px
+      background-position: center bottom
+      background-repeat: no-repeat
+    &::before
+      background-image: url("../assets/img/gear-vr_optimized_bg_img01.jpg")
+    &::after
+      background-image: url("../assets/img/gear-vr_optimized_bg_img02.jpg")
+      transition: opacity 0.5s
+      opacity: 0
+    &.active::after
+      opacity: 1
+
+  .swipe-list
+    position: relative
+    z-index: 20
+    padding-top: 605px
+    text-align: center
+    transition: all 0.8s
     p
       width: 850px
-      margin: 210px auto 0
+      position: absolute
+      top: 800px
+      left: 50%
+      transform: translateX(-50%)
       color: #000
       font-size: 18px
       line-height: 1.8
@@ -236,9 +271,14 @@
       position: absolute
     li:nth-child(1)
       left: 0
+      img
+        height: 549px
     li:nth-child(2)
       left: 100%
-  .swipe-tap
+      img
+        height: 482px
+        margin-top: 15px
+  .swiper-tap
     position: absolute
     top: 1350px
     width: 100%
@@ -281,8 +321,11 @@
       color: #cacaca
       z-index: 30
       font-size: 36px
+      transition: all 2s
       &:hover
         color: #fff
+      &.hide
+        opacity: 0.2
     .btn__prev
       left: 30px
     .btn__next
@@ -335,44 +378,137 @@
         font-weight: 100
     .carousel-controller
       position: absolute
+      width: 100%
+      height: 615px
       background: #fff
       button
+        @extend %btn
         position: absolute
+        top: 50%
+        z-index: 30
         width: 44px
         height: 120px
+        margin-top: -60px
         border-radius: 2px
+        background: rgba(255,255,255,0.1)
+        color: #cacaca
+        font-size: 36px
+        &:hover
+          color: #fff
+        &:focus
+          outline: 2px solid white
       .btn__prev
         left: 30px
       .btn__next
         right: 30px
+    .carousel-indicator
+      position: relative
+      top: -120px
+      z-index: 30
+      text-align: center
+      li
+        @extend %text-hidden
+        display: inline-block
+        margin: 0 8px
+        button
+          @extend %btn
+          width: 13px
+          height: 13px
+          background: #a3a7ad
+          border-radius: 50%
+          transition: all 0.5s
+          &:hover,
+          &:focus,
+          &.active
+            background: #525254
+    
     .carousel-contents
+      position: relative
+      left: 0
       height: 615px
       width: 100%
-      overflow: hidden
+      transition: all 0.5s
       li
-        background-size: cover
+        background-size: auto 615px
         position: absolute
         width: 100%
-        height: 100%
+        height: 615px
       li:nth-child(1)
+        left: 0
         background-image: url("../assets/img/gear-vr_territory_list01_slide01.jpg")
       li:nth-child(2)
-        background-image: url("../assets/img/gear-vr_territory_list02_slide01.jpg")      
+        left: 100%
+        background-image: url("../assets/img/gear-vr_territory_list01_slide02.jpg")      
       li:nth-child(3)
-        background-image: url("../assets/img/gear-vr_territory_list03_slide01.jpg")
+        left: 200%
+        background-image: url("../assets/img/gear-vr_territory_list01_slide03.jpg")
       li:nth-child(4)
-        background-image: url("../assets/img/gear-vr_territory_list04_slide01.jpg")
-      li:nth-child(5)
-        background-image: url("../assets/img/gear-vr_territory_list05_slide01.jpg")
+        left: 300%
+        background-image: url("../assets/img/gear-vr_territory_list01_slide04.jpg")
     .feature-list
       text-align: center
       padding-top: 48px
     .feature-list li
+      position: relative
       display: inline-block
       width: 179px
       height: 99px
       background-size: cover
-      opacity: 0.9      
+      &.active::before
+        display: none
+      &.active a::before,
+      &.active a::after
+        display: none
+
+      &::before
+        @extend %btn
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: 0 
+        right: 0
+        bottom: 0
+        color: #fff
+        background: rgba(0,0,0, 0.5)
+        transition: all 0.25s
+      &:hover::before
+        background: rgba(51,51,153, 0.9)
+      a
+        display: block
+        position: relative
+        height: 100%
+        &::before
+          position: absolute
+          top: 50%
+          left: 50%
+          content: ''
+          display: block
+          height: 2px
+          width: 38px
+          margin: -1px 0 0 -19px
+          background: #fff
+          transform: rotate(0deg)
+          transition: all 0.15s
+          opacity: 0
+        &::after
+          position: absolute
+          top: 50%
+          left: 50%
+          content: ''
+          display: block
+          width: 2px
+          height: 38px
+          margin: -19px 0 0 -1px
+          background: #fff
+          transform: rotate(0deg)
+          transition: all 0.15s
+          opacity: 0
+        &:hover::before,
+        &:hover::after
+          transform: rotate(90deg)
+          opacity: 1
+
     .feature-list li:nth-child(1)
       background-image: url("../assets/img/gear-vr_territory_list01.gif")
     .feature-list li:nth-child(2)
@@ -390,6 +526,13 @@
       margin-top: -100px
       h4
         font-size: 28px
+      .desc
+        line-height: 1.8
+    .carousel-content-desc-wrapper     
+      display: none
+      &.active
+        display: block    
+
 // --------------------
 // Stage is set
 // --------------------
@@ -473,22 +616,25 @@
       color: #fff
   .gallery-1
     width: 62%
-    height: 520px
+    height: 555px
     background-image: url("../assets/img/gear-vr_gallery_img01.jpg")
     background-size: cover 
     float: left
   .gallery-2
     width: 38%
-    height: 260px
+    height: 267px
     background-image: url("../assets/img/gear-vr_gallery_img02.jpg")
     background-size: cover 
     float: left
+    border-left: 20px solid #fff
+    margin-bottom: 20px
   .gallery-3
     width: 38%
-    height: 260px
+    height: 267px
     background-image: url("../assets/img/gear-vr_gallery_img03.jpg")
     background-size: cover 
     float: left
+    border-left: 20px solid #fff
 
 // --------------------
 // Specification 

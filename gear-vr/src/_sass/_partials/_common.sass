@@ -1,9 +1,13 @@
 // --------------------
 // 일반 요소 
 // --------------------
+html
+  overflow: hidden
+  overflow-y: scroll
 html, body
   height: 100%
   min-height: 100%
+
 ul
   list-style: none
 a
@@ -12,6 +16,7 @@ a
 img
   pointer-events: none
   user-select: none
+
 .a11y-hidden
   display: block
   width: 1px
@@ -34,6 +39,7 @@ img
     position: absolute
     left: 20px
     top: 28px
+    z-index: 10
     padding: 12px 10px
     a
       @extend %text-hidden
@@ -48,7 +54,13 @@ img
   .brand-product
     @extend %full-size-bg
     img
+      position: absolute
+      left: 50%
+      display: block
+      width: 1440px
       height: 810px
+      margin-left: -720px
+
     .contianer__product-brand
       position: absolute
       left: 64%
@@ -57,7 +69,7 @@ img
     .brand-name
       display: block
       font-size: 56px
-      font-weight: 600
+      font-weight: 700
       line-height: 59px
     .brand-powered
       @extend %text-hidden 
@@ -118,6 +130,8 @@ img
     position: absolute
     bottom: 0
     left: 0
+    z-index: 50
+    background: rgba(255,255,255,0.9)
     width: 100%
     border-bottom: 1px solid #cdcdcd
     padding-left: 60px
