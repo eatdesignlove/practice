@@ -19,12 +19,14 @@
     margin-bottom: 91px
   .feature-body
     height: 1300px
-  .key-image
+  .vf__key-image
+    margin-top: 35px
     width: 802px
+
   .feature__list
     @extend %clearfix
     padding-top: 84px
-    position: absoluteß
+    position: absolute
     bottom: 151px
     width: 100%
     text-align: center
@@ -41,7 +43,6 @@
       margin-bottom: 12px
       font-size: 32px
       font-weight: 600
-
     .list-desc
       font-size: 18px
 
@@ -51,10 +52,29 @@
 .feature-complete-focus
   background: #000
   color: #fff
-  // background-image: url("../assets/img/gear-vr_focus_bg.jpg")
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    top: 30px
+    left: 50%
+    width: 1790px
+    height: 1240px
+    transform: translatex(-50%)
+    background-image: url("../assets/img/gear-vr_focus_bg.jpg")
+    background-size: cover
+    z-index: 1
+    opacity: 0
+    transition: opacity 1s
+  &.para-done::before
+    opacity: 1
   .feature__title
-    padding: 101px 0 39px
+    padding: 150px 0 39px
+    position: relative
+    z-index: 10
   .feature__desc
+    position: relative
+    z-index: 10
     max-width: 990px
     margin: 0 auto
     text-align: center
@@ -62,25 +82,31 @@
     line-height: 38px
     margin-bottom: 91px
   .feature__exprience
-    height: 920px
-    .exp-device
+    height: 818px
+    .vf__exp-device
       text-align: center
       overflow: hidden
       position: relative
+      top: -50px
+      transform: scale(1)
+      z-index: 1
+      transition: opacity 1s
+      &.para-done
+        opacity: 0
       .device
         width: 100%
         position: relative
         z-index: 10
       .lense-left
         position: absolute
-        width: 17%
+        width: 21%
         right: 49%
-        top: 30%
+        top: 16%
       .lense-right
         position: absolute
-        width: 17%
+        width: 21%
         left: 49%
-        top: 30%
+        top: 16%
 
 // --------------------
 // Convenient Control
@@ -97,7 +123,7 @@
     margin-bottom: 91px  
   .feature-figure
     position: relative
-    .key-image
+    .vf__key-image
       width: 100%
     .feature__list
       position: absolute
@@ -121,12 +147,13 @@
 // --------------------
 .feature-galaxy-connection
   position: relative
-  height: 1005px
-  .key-image
+  height: 930px
+  .vf__key-image
     height: 1005px
     position: absolute
     right: 0
-    top: -200px
+    top: -250px
+    z-index: -1
   .feature-head
     margin-left: 18.7%
   .feature__title
@@ -137,7 +164,7 @@
     margin-bottom: 33px
   .feature__desc
     width: 440px
-    font-size: 20px
+    font-size: 18px
     line-height: 1.8
     margin-bottom: 101px
   .feature__list
@@ -145,21 +172,23 @@
     text-align: center
     img
       width: 157px
+      float: left
     li
       float: left
-  .feature__list li:first-child figure
-      margin-left: -30px
   [class^="list-item-"]
     display: block
-    width: 220px
-    text-align: center
+    width: 200px
+    text-align: left
+  figcaption
+    float: left
+    margin-left: 24px
   .list-item-title
-    font-weight: 900
+    font-weight: 700
     font-size: 28px
-    margin-bottom: 3px
+    margin-bottom: 6px
   .list-item-desc 
     font-size: 20px
-  
+    @extend %font-jaf  
 // --------------------
 // Oculus Home
 // --------------------
@@ -187,7 +216,7 @@
     height: 709px
     background-image: url("../assets/img/gear-vr_oculus_con_bg.jpg")
     background-size: 100% auto
-    .key-image
+    .vf__key-image
       position: absolute
       bottom: 237px
       left: 0
@@ -208,7 +237,7 @@
     position: relative
     width: 100%
     overflow: hidden
-  .vr-device
+  .vf__vr-device
     position: absolute
     top: 0
     left: 50%
@@ -216,7 +245,7 @@
     height: 740px
     margin-left: -720px
     z-index: 20
-  .gallaxy-device
+  .vf__gallaxy-device
     width: 558px
     height: 32px
     background-image: url("../assets/img/gear-vr_optimized_phone.png") 
@@ -225,11 +254,15 @@
     top: 450px
     z-index: 30
     left: 50%
-    transform: translateX(-50%)
+    transform: translate(-50%, 100px)
+    transition: 0.5
+    opacity: 0
   .ui-swiper      
     position: relative
     height: 1530px
+    opacity: 0
     overflow: hidden
+    transition: opacity 0.1s
     &::before,
     &::after
       display: block
@@ -316,7 +349,7 @@
       position: absolute
       width: 44px
       height: 120px
-      background: rgba(255,255,255,0.1)
+      background: rgba(255,255,255,0.2)
       cursor: pointer
       color: #cacaca
       z-index: 30
@@ -390,7 +423,7 @@
         height: 120px
         margin-top: -60px
         border-radius: 2px
-        background: rgba(255,255,255,0.1)
+        background: rgba(255,255,255,0.2)
         color: #cacaca
         font-size: 36px
         &:hover
@@ -564,22 +597,34 @@
   .feature-experience
     text-align: center
     position: relative
-    height: 0
-    padding-bottom: 631px
+    padding-bottom: 537px
+    margin-bottom: 113px
     [class^="item-"]
-      position: relative
-      margin-right: 60px
+      position: absolute
     .item-g360
-      bottom: 250px
-      width: 196px
-      margin-bottom: -98px
-    .item-gnote
-      bottom: 250px
-      width: 255px
-      margin-bottom: -229px
+      width: 230px
+      height: 230px
+      bottom: 0
+      right: 50%      
+      z-index: 20
+      margin-bottom: -50px
+      margin-right: 360px
+      transform: translateX(50%)
     .item-gear
-      width: 305px
-      margin-right: 0
+      width: 699px
+      height: 345px
+      bottom: 0
+      left: 50%
+      transform: translate(-50%)
+    .item-gnote
+      width: 403px
+      height: 537px
+      margin-bottom: -35px
+      margin-left: 260px
+      left: 50%
+      bottom: 0
+      z-index: 20
+      transform: translateX(-50%)
 
 // --------------------
 // VR Gallary 
@@ -614,27 +659,35 @@
       background: #8c8e90
       border-color: #8c8e90
       color: #fff
+  li[class^="gallery-"]
+    position: relative
+    overflow: hidden
+    &::after
+      content: ''
+      position: absolute
+      bottom: 30px
+      right: 30px
+      display: block
+      width: 76px
+      height: 38px
+      background-image: url("../assets/img/ico_gallery_360.png") 
+      background-size: 76px 38px
+    img
+      height: 100%
   .gallery-1
     width: 62%
     height: 555px
-    background-image: url("../assets/img/gear-vr_gallery_img01.jpg")
+    float: left
+  .gallery-2,
+  .gallery-3,
+    width: 38%
+    height: 267px
     background-size: cover 
     float: left
+    border-left: 20px solid #fff
   .gallery-2
-    width: 38%
-    height: 267px
-    background-image: url("../assets/img/gear-vr_gallery_img02.jpg")
-    background-size: cover 
-    float: left
-    border-left: 20px solid #fff
     margin-bottom: 20px
-  .gallery-3
-    width: 38%
-    height: 267px
-    background-image: url("../assets/img/gear-vr_gallery_img03.jpg")
-    background-size: cover 
-    float: left
-    border-left: 20px solid #fff
+
 
 // --------------------
 // Specification 

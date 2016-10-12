@@ -214,7 +214,7 @@
     while (carousel_contents_desc[--carousel_contents_desc_len]) {
       // 아이템 리스트와 아이템 설명리스트의 인댁스 비교
       desc_idx = carousel_contents_desc[carousel_contents_desc_len].getAttribute('data-list-desc-idx');
-      console.log(desc_idx, list_idx);
+      // console.log(desc_idx, list_idx);
       
       if ( list_idx === desc_idx ) {
         addClass(carousel_contents_desc[carousel_contents_desc_len], 'active');

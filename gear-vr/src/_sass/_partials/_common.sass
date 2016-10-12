@@ -53,14 +53,15 @@ img
       
   .brand-product
     @extend %full-size-bg
-    img
+    .vf__vr-device
       position: absolute
+      top: -15px
       left: 50%
       display: block
       width: 1440px
       height: 810px
       margin-left: -720px
-
+      transition: all 0.5s
     .contianer__product-brand
       position: absolute
       left: 64%
@@ -271,6 +272,7 @@ img
     bottom: 33px
     .btn__site-map,
     .btn__back-to-top
+      @extend %btn
       height: 20px
       text-transform: initial
       font-size: 16px

@@ -17,7 +17,7 @@
   <header class="page-header">
     <h1 class="brand-logo"><a href="http://samsung.com">Samsung</a></h1>
     <h2 class="brand-product">
-      <img src="dist/assets/img/gear-vr_kv.jpg" alt="Gear VR">
+      <img class="vf__vr-device" src="dist/assets/img/gear-vr_kv.jpg" alt="Gear VR">
       <div class="contianer__product-brand">
         <span class="brand-name">Gear VR</span>
         <span class="brand-powered">Powered by Oculus</span>
@@ -30,11 +30,11 @@
     </button>
     <div class="gnb">
       <ul class="gnb-menu">
-        <li><a class="menu-vr" href="#">Gear VR</a></li>
-        <li><a class="menu-des" href="#">Design</a></li>
-        <li><a class="menu-int" href="#">Interface</a></li>
-        <li><a class="menu-exp" href="#">Experience</a></li>
-        <li><a class="menu-com" href="#">Compatibilty</a></li>
+        <li><a class="menu-vr" data-section-title="brand-product" href="#">Gear VR</a></li>
+        <li><a class="menu-des" data-section-title="feature__title" href="#">Design</a></li>
+        <li><a class="menu-int" data-section-title="feature-oculus-home" href="#">Interface</a></li>
+        <li><a class="menu-exp" data-section-title="feature-experiences" href="#">Experience</a></li>
+        <li><a class="menu-com" data-section-title="feature-stage-is-set" href="#">Compatibilty</a></li>
       </ul>
     </div>
   </header>
@@ -46,7 +46,7 @@
         <p class="feature__desc">You're ready to explore new worlds, engage in tense action. You need a headset that's well made,<br> and engineered to fit better than ever before. Like the Gear VR.</p>
       </div>
       <div class="feature-body">
-        <img class="key-image" src="dist/assets/img/gear-vr_supreme_vr.jpg" alt="Supreme comfort wiith VR">
+        <img class="vf__key-image" src="dist/assets/img/gear-vr_supreme_vr.jpg" alt="Supreme comfort wiith VR">
         <ul class="feature__list">
           <li>
             <figure>
@@ -84,10 +84,10 @@
         <p class="feature__desc">With the Gear VR you get a bigger field of view, smoother images. Incredibly low light leakage and<br> reflection prevention. It's game on.</p>
       </div>
       <div class="feature__exprience">
-        <div class="exp-device">
+        <div class="vf__exp-device">
           <img class="device" src="dist/assets/img/gear-vr_focus_vr.png">        
-          <img class="lense-left" src="dist/assets/img/gear-vr_focus_lense_left.jpg" alt="">
-          <img class="lense-right" src="dist/assets/img/gear-vr_focus_lense_right.jpg" alt="">
+          <img class="lense-left" src="dist/assets/img/gear-vr_focus_lense_left.jpg" alt="left-lense">
+          <img class="lense-right" src="dist/assets/img/gear-vr_focus_lense_right.jpg" alt="right-lense">
         </div>
       </div>
     </section>
@@ -97,7 +97,7 @@
         <p class="feature__desc">With a tap or a swipe. The larger and now completely flat touchpad exists for precision and control.<br> The new Home Key takes you straight back to Oculus Home.</p>
       </div>
       <figure class="feature-figure">
-        <img class="key-image" src="dist/assets/img/gear-vr_control.jpg" alt="Convenient control">
+        <img class="vf__key-image" src="dist/assets/img/gear-vr_control.jpg" alt="Convenient control">
         <figcaption>
           <ul class="feature__list">
             <li class="list-1">
@@ -119,28 +119,17 @@
     <section class="feature-galaxy-connection">
       <div class="feature-head">
         <h2 class="feature__title">The Galaxy<br>connection</h2>
-        <p class="feature__desc">Gear VR works seamlessly with Galaxy smartphones. Compatible with both USB Type-C and Micro USB, you just need to snap on the connector module for your phone, and you're done.</p>
+        <p class="feature__desc">Gear VR works seamlessly with Galaxy smartphones using Micro USB connection. Simply plug in the phone to begin.</p>
       </div>
-      <img class="key-image" src="dist/assets/img/gear-vr_usb_default_img.jpg" alt="">
+      <img class="vf__key-image" src="dist/assets/img/gear-vr_usb_default_img.jpg" alt="Gear VR USB Connection">
       <ul class="feature__list">
         <li>
           <a href="#">
             <figure>
               <img src="dist/assets/img/gear-vr_usb_micro.png" alt="">
               <figcaption>
-                <span class="list-item-title"><span class="a11y-hidden">Connection Type : </span>USB Type-C <span class="fa  fa-angle-right"></span> </span>
-                <span class="list-item-desc"><span class="a11y-hidden">Use Case : </span>Galaxy Note7</span>
-              </figcaption>
-            </figure>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <figure>
-              <img src="dist/assets/img/gear-vr_usb_micro.png" alt="" alt="">
-              <figcaption>
-                <span class="list-item-title"><span class="a11y-hidden">Connection Type</span>Micro USB <span class="fa  fa-angle-right"></span> </span>
-                <span class="list-item-desc"><span class="a11y-hidden">Use Case : </span>Galaxy S7, S7 edge, Note5, S6 edge+, S6, S6 edge</span>
+                <span class="list-item-title"><span class="a11y-hidden">Connection Type</span>Micro USB</span>
+                <span class="list-item-desc"><span class="a11y-hidden">Use Case : </span>Galaxy S7, S7 edge, Note5, S6 edge+,<br> S6, S6 edge</span>
               </figcaption>
             </figure>
           </a>
@@ -155,14 +144,14 @@
         </p>
       </div>
       <div class="feature-body">
-        <div class="key-image"></div>
+        <div class="vf__key-image"></div>
       </div>
     </section>
     <section class="feature-optimized-for-gear">
       <h2 class="feature__title">Optimized for Gear VR</h2>
       <div class="feature-body">
-        <img class="vr-device" src="dist/assets/img/gear-vr_optimized_vr.png" alt="Optimized for Gear VR">
-        <div class="gallaxy-device"></div>
+        <img class="vf__vr-device" src="dist/assets/img/gear-vr_optimized_vr.png" alt="Optimized for Gear VR">
+        <div class="vf__gallaxy-device"></div>
         <div class="ui-swiper">
           <ul class="swiper-tap">
             <li><a class="prev active" href="#">Samsung Internet</a></li>
@@ -244,17 +233,23 @@
         <a href="#">Galaxy Note7 <span class="fa  fa-angle-right"></span></a>
       </div>
       <div class="feature-experience">
-        <img class="item-g360" src="dist/assets/img/gear-vr_set_360.png">
-        <img class="item-gnote" src="dist/assets/img/gear-vr_set_note7.png">
-        <img class="item-gear" src="dist/assets/img/gear-vr_set_vr.png">
+        <img class="item-g360" src="dist/assets/img/galaxy-stage_360.png">
+        <img class="item-gear" src="dist/assets/img/galaxy-stage_vr.png">
+        <img class="item-gnote" src="dist/assets/img/galaxy-stage_phone.png">
       </div>
     </section>
     <section class="feture-vr-gallery">
       <h2 class="feature__title a11y-hidden">VR Gallery</h2>
       <ul class="feature__list">
-        <li class="gallery-1"></li>
-        <li class="gallery-2"></li>
-        <li class="gallery-3"></li>
+        <li class="gallery-1">
+          <img src="dist/assets/img/gear-vr_gallery_img01.jpg" alt="">
+        </li>
+        <li class="gallery-2">
+          <img src="dist/assets/img/gear-vr_gallery_img02.jpg" alt="">
+        </li>
+        <li class="gallery-3">
+          <img src="dist/assets/img/gear-vr_gallery_img03.jpg" alt="">
+        </li>
       </ul>
       <div class="container__experience-text">
         <p class="feature__desc">Experience 360° content on your Gear VR by heading over to the Gear 360 VR Gallery for videos and photos taken with the Gear 360.</p>
@@ -369,7 +364,10 @@
 <script src="lib/dom-helper.js"></script>
 <script src="lib/scrollmagic/ScrollMagic.min.js"></script>
 <script src="lib/scrollmagic/debug.addIndicators.js"></script>
+<script src="lib/greensock/TweenMax.js"></script>
+<script src="lib/greensock/ScrollToPlugin.js"></script>
 
+<script src="src/js/ui-script.js"></script>
 <script src="src/js/ui-carousel.js"></script>
 <script src="src/js/ui-swiper.js"></script>
 <script src="src/js/ui-parallax.js"></script>
