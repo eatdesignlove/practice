@@ -18,10 +18,10 @@
     <h1 class="brand-logo"><a href="http://samsung.com">Samsung</a></h1>
     <h2 class="brand-product">
       <img class="vf__vr-device" src="dist/assets/img/gear-vr_kv.jpg" alt="Gear VR">
-      <div class="contianer__product-brand">
+      <span class="contianer__product-brand">
         <span class="brand-name">Gear VR</span>
         <span class="brand-powered">Powered by Oculus</span>
-      </div>
+      </span>
     </h2>
     <button class="page-menu"><span class="a11y-hidden">Brand Menu</span>
       <span class="page-menu-bar"></span>
@@ -29,6 +29,12 @@
       <span class="page-menu-bar"></span>
     </button>
     <div class="gnb">
+      <button class="page-menu-fixed"><span class="a11y-hidden">Brand Menu</span>
+        <span class="page-menu-bar"></span>
+        <span class="page-menu-bar"></span>
+        <span class="page-menu-bar"></span>
+        <span class="page-menu-bar"></span>
+      </button>
       <ul class="gnb-menu">
         <li><a class="menu-vr" data-section-title="brand-product" href="#">Gear VR</a></li>
         <li><a class="menu-des" data-section-title="feature__title" href="#">Design</a></li>
@@ -36,6 +42,7 @@
         <li><a class="menu-exp" data-section-title="feature-experiences" href="#">Experience</a></li>
         <li><a class="menu-com" data-section-title="feature-stage-is-set" href="#">Compatibilty</a></li>
       </ul>
+      <button class="btn__scroll-to-edge" data-section-title="feature-supreme-comfort"><span class="text-hidden">Scroll to Down</span></button>
     </div>
   </header>
   <section class="page-main">
@@ -85,9 +92,9 @@
       </div>
       <div class="feature__exprience">
         <div class="vf__exp-device">
-          <img class="device" src="dist/assets/img/gear-vr_focus_vr.png">        
-          <img class="lense-left" src="dist/assets/img/gear-vr_focus_lense_left.jpg" alt="left-lense">
-          <img class="lense-right" src="dist/assets/img/gear-vr_focus_lense_right.jpg" alt="right-lense">
+          <img class="device" src="dist/assets/img/gear-vr_focus_vr.png" alt="VR Device">        
+          <img class="lense-left" src="dist/assets/img/gear-vr_focus_lense_left.jpg" alt="Left-lense view">
+          <img class="lense-right" src="dist/assets/img/gear-vr_focus_lense_right.jpg" alt="Right-lense view">
         </div>
       </div>
     </section>
@@ -126,7 +133,7 @@
         <li>
           <a href="#">
             <figure>
-              <img src="dist/assets/img/gear-vr_usb_micro.png" alt="">
+              <img src="dist/assets/img/gear-vr_usb_micro.png" alt="gear-vr micro USB">
               <figcaption>
                 <span class="list-item-title"><span class="a11y-hidden">Connection Type</span>Micro USB</span>
                 <span class="list-item-desc"><span class="a11y-hidden">Use Case : </span>Galaxy S7, S7 edge, Note5, S6 edge+,<br> S6, S6 edge</span>
@@ -159,11 +166,11 @@
           </ul>
           <ul class="swipe-list">
             <li class="active">
-              <img src="dist/assets/img/gear-vr_optimized_slide01.png" alt="">
+              <img src="dist/assets/img/gear-vr_optimized_slide01.png" alt="Samsung Internet Interface View">
               <p>Created for optimized web browsing on Gear VR, Samsung Internet makes navigation easy, and prioritize videos and images made for VR. It also makes for a seamless transition from your Galaxy phone to your Gear VR.</p>
             </li>
             <li>
-              <img src="dist/assets/img/gear-vr_optimized_slide02.png" alt="">
+              <img src="dist/assets/img/gear-vr_optimized_slide02.png" alt="Samsung Gallery Interface View">
               <p>This is the app you want when viewing content created with your Galaxy phone or Gear 360, from photos to 360 videos. Supporting a wide range of formats and features including 2D and 3D video as well as 3D spatial sound and subtitles, it's the ulimate media player for Gear VR.</p>
             </li>
           </ul>
@@ -233,9 +240,9 @@
         <a href="#">Galaxy Note7 <span class="fa  fa-angle-right"></span></a>
       </div>
       <div class="feature-experience">
-        <img class="item-g360" src="dist/assets/img/galaxy-stage_360.png">
-        <img class="item-gear" src="dist/assets/img/galaxy-stage_vr.png">
-        <img class="item-gnote" src="dist/assets/img/galaxy-stage_phone.png">
+        <img class="item-g360" src="dist/assets/img/galaxy-stage_360.png" alt="Gear360 Device">
+        <img class="item-gear" src="dist/assets/img/galaxy-stage_vr.png" alt="Gear VR Device">
+        <img class="item-gnote" src="dist/assets/img/galaxy-stage_phone.png" alt="Gallaxy Note Device">
       </div>
     </section>
     <section class="feture-vr-gallery">
@@ -313,13 +320,13 @@
               <p>USB Type-C &amp; micro USB</p>
             </li>
             <li class="other-spec-06">
-              <h3>Compatible devices</p>
+              <h3>Compatible devices</h3>
               <p>Galaxy Note7, S7, S7 edge,<br> Note5, S6 edge+, S6, S6 edge</p>
             </li>
           </ul>
     </section>
   </section>
-  <foooter class="page-footer">
+  <footer class="page-footer">
     <h2 class="a11y-hidden">Footer</h2>
     <div class="footer-top">
       <div class="container__share">
@@ -334,13 +341,13 @@
       <div class="container__utility">
         <button class="btn__a11y-color-contrast">C</button>
         <button class="btn__a11y-color-default">C</button>
-        <button class="btn__network-toggle">
-          My Network Speed (High)
-          <ul class="container__network-setting-list">
-            <li><a href="#">- High bandwidth mode</a></li>
-            <li><a href="#">- Low bandwidth mode</a></li>
-          </ul>
-        </button>
+        <a class="btn__network-toggle">
+          My Network Speed (High)          
+        </a>
+        <ul class="container__network-setting-list">
+          <li><a href="#">- High bandwidth mode</a></li>
+          <li><a href="#">- Low bandwidth mode</a></li>
+        </ul>
         <a class="btn__go-site-map" href="">Site Map</a>
         <a class="btn__go-samsung" href="">Global Samsung</a>
       </div>
@@ -360,7 +367,8 @@
         <button class="btn__back-to-top">Back to Top</button>
       </div>
     </div>
-  </section>
+  </footer>
+
 <script src="lib/dom-helper.js"></script>
 <script src="lib/scrollmagic/ScrollMagic.min.js"></script>
 <script src="lib/scrollmagic/debug.addIndicators.js"></script>

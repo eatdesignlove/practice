@@ -73,6 +73,82 @@
     // .addIndicators({name: "GNB-comptibilty"})
     .addTo(ctrl);
 
+  // --------------------
+  // scene. page_menu_activation
+  // --------------------
+
+  var scene_page_menu_state = new SM.Scene({
+    triggerHook : "0"
+  });
+
+  scene_page_menu_state
+    .offset(150)
+    .setClassToggle('.page-menu', 'para-fixed')
+    // .addIndicators({name: "page-menu-state"})
+    .addTo(ctrl);
+
+  // scene_page_menu
+  var page_fixed_menu = query('.page-menu-fixed');
+  var scene_page_menu = new SM.Scene({
+    triggerElement: ".page-main",
+    triggerHook : "0.12"
+  });
+
+  scene_page_menu
+    .setClassToggle('.page-menu', 'hide')
+    .on("enter leave", function (e) {
+      console.log(e.type === 'leave' && e.target.controller().info("scrollDirection") === 'FORWARD');
+      console.log(e.type === 'enter');
+      if (e.type === 'leave' && e.target.controller().info("scrollDirection") === 'FORWARD') {
+        btn_scroll_edge.setAttribute('data-section-title', 'page-main');
+      } else if (e.type === 'enter'){
+        btn_scroll_edge.setAttribute('data-section-title', 'page-header');
+      }
+    })
+    // .addIndicators({name: "page-menu"})
+    .addTo(ctrl);
+
+  // scene_page_menu_fixed
+  var scene_page_menu_fixed = new SM.Scene({
+    triggerElement: ".page-main",
+    triggerHook : "0.075"
+  });
+
+  scene_page_menu_fixed
+    .on("enter leave", function (e) {
+      // console.log(e.type === 'leave');
+      if (e.type === 'enter' && e.target.controller().info("scrollDirection") === 'FORWARD') {
+        css(page_fixed_menu, 'display', 'block');
+        setTimeout(function(){ addClass(page_fixed_menu, 'show') } , 250);
+      } else if (e.type === 'leave'){
+        removeClass(page_fixed_menu, 'show');
+        setTimeout(function(){ css(page_fixed_menu, 'display', 'none') } , 250);
+      }
+    })
+    // .setClassToggle('.page-menu-fixed', 'show')
+    .addTo(ctrl);
+
+  // --------------------
+  // scene. btn_scroll_edge
+  // --------------------
+  var btn_scroll_edge = query('.btn__scroll-to-edge');
+  var scene_btn_scroll_edge = new SM.Scene({
+    triggerElement: ".page-main",
+    triggerHook : "0.9"
+  });
+  scene_btn_scroll_edge
+    .setClassToggle('.btn__scroll-to-edge', 'fixed')
+    // .addIndicators({name: "GNB-comptibilty"})
+    .addTo(ctrl);
+
+  var scene_btn_scroll_edge_footer = new SM.Scene({
+    triggerElement: ".page-footer",
+    triggerHook : "1"
+  });
+  scene_btn_scroll_edge_footer 
+    .setClassToggle('.btn__scroll-to-edge', 'hide')
+    .addTo(ctrl);
+
 }(this, this.ScrollMagic));
 
 (function(global, SM){
@@ -153,7 +229,6 @@
         removeClass(vf_key_img, 'para-done');        
         removeClass(vf_container, 'para-done'); 
       }
-      
     })
     // .addIndicators({name: "para-supreme"})
     .addTo(ctrl);
