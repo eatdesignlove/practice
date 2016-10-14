@@ -175,18 +175,18 @@
       float: left
     li
       float: left
-  [class^="list-item-"]
+  [class^="list-"]
     display: block
     width: 200px
     text-align: left
   figcaption
     float: left
     margin-left: 24px
-  .list-item-title
+  .list-title
     font-weight: 700
     font-size: 28px
     margin-bottom: 6px
-  .list-item-desc 
+  .list-desc 
     font-size: 20px
     @extend %font-jaf  
 // --------------------
@@ -359,6 +359,9 @@
         color: #fff
       &.hide
         opacity: 0.2
+      &.a11y-color-mode
+        background: #fff !important
+        color: #000 !important
     .btn__prev
       left: 30px
     .btn__next
@@ -388,7 +391,7 @@
     .carousel-content-desc
       text-align: center
       color: #fff
-      .title
+      .list-title
         text-transform: uppercase
       .category
         text-transform: initial
@@ -404,7 +407,7 @@
           position: absolute
           top: 8px
           left: -24px
-      .desc
+      .list-desc
         width: 920px
         margin: 10px auto 60px
         font-size: 16px
@@ -430,6 +433,9 @@
           color: #fff
         &:focus
           outline: 2px solid white
+        &.a11y-color-mode
+          background: #fff !important
+          color: #000 !important
       .btn__prev
         left: 30px
       .btn__next
@@ -454,7 +460,11 @@
           &:focus,
           &.active
             background: #525254
-    
+          &.a11y-color-mode
+            background-color: #fff !important
+            &:hover,
+            &.active
+              background-color: #fff01f !important
     .carousel-contents
       position: relative
       left: 0
@@ -507,6 +517,13 @@
         transition: all 0.25s
       &:hover::before
         background: rgba(51,51,153, 0.9)
+      &.a11y-color-mode:hover::before
+        background: #fff01f !important
+        color: #000 !important
+      &.a11y-color-mode
+        a::before,
+        a::after
+          background-color: #000 !important
       a
         display: block
         position: relative
@@ -674,6 +691,8 @@
       background-size: 76px 38px
     img
       height: 100%
+    &.a11y-color-mode::after
+      background-color: #000 !important
   .gallery-1
     width: 62%
     height: 555px

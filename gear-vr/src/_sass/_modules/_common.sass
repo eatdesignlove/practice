@@ -1,20 +1,60 @@
 // --------------------
+// 공통 변수 
+// --------------------
+$base-font-size: 16px
+$base-line-height: 1.8
+
+// --------------------
 // 공통 플레이스홀더 모듈
 // --------------------
 
-
+// IR기법을 위한 text처리
 %text-hidden
+  display: block
   text-indent: -9999px
+  background-repeat: no-repeat
 
+// 플로팅 클리어픽스
 %clearfix
   &::after
     content: ''
     display: block
     clear: both
 
+// 대문자화
 %uppercase
   text-transform: uppercase
 
+// 풀사이즈 배경이미지
 %full-size-bg
   background-size: cover
   background-repeat: no-repeat
+
+// 접근성 고대비모드 설정
+%a11y-color-mode-yellow
+  &.a11y-color-mode
+    color: #000 !important
+    background-color: #fff01f !important
+    
+%a11y-color-mode-default
+  &.a11y-color-mode
+    color: #fff01f !important
+    background-color: #000 !important
+
+// Fixed Menu Button 내부 햄버거 라인
+%page-menu-bar
+  display: block
+  width: 25px
+  height: 2px
+  margin: 3px auto 6px
+  background: #000
+  transition: all 0.25s
+
+// Go-to-link Button 화살표 불릿
+%btn-bullet-allow
+  background-image: url("../assets/img/ico_arrow_r.png")
+  background-position: right center
+  &.a11y-color-mode
+    border-color: #fff
+  &.a11y-color-mode:hover
+    border-color: #dbdbdb 

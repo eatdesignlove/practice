@@ -1,0 +1,198 @@
+// --------------------
+// 헤더 영역 
+// --------------------
+.page-header
+  position: relative
+  height: 100%
+
+// SAMSUNG LOGO
+.brand-logo
+  @extend %a11y-color-mode-yellow
+  position: absolute
+  left: 20px
+  top: 28px
+  z-index: 10
+  padding: 12px 10px
+  a
+    @extend %text-hidden
+    width: 114px
+    height: 17px
+    background-image: url("../assets/img/logo_samsung-galaxy.png")
+    background-size: 114px 17px
+    background-position: center
+
+// VR LOGO
+.brand-product
+  @extend %full-size-bg
+  .vf__vr-device
+    display: block
+    width: 1440px
+    height: 810px
+    position: absolute
+    top: -15px
+    left: 50%
+    margin-left: -720px
+    transition: all 0.5s
+  .contianer__product-brand
+    @extend %a11y-color-mode-yellow
+    display: block
+    width: 210px
+    position: absolute
+    left: 64%
+    top: 560px      
+  .brand-name
+    display: block
+    font-size: 56px
+    font-weight: 700
+    line-height: 59px
+  .brand-powered
+    @extend %text-hidden 
+    display: block
+    height: 28px
+    background-image: url("../assets/img/gear-vr_kv_logo.png")
+    background-repeat: no-repeat
+    background-size: 200px auto
+    background-position: 6px top
+
+// PAGE FIXED MENU BUTTON
+.page-menu
+  @extend %btn
+  @extend %btn-fixed-menu
+  position: fixed
+  top: 26px
+  z-index: 100
+  transition: all 0.5s
+  // Parallax Fixed시 스타일
+  &.para-fixed
+    &::before
+      background-color: #a7a7a7
+      border-radius: 50%
+      transform: scale(1)
+    .page-menu-bar
+      background: #fff
+  // 화면에서 숨기기
+  &.hide
+    top: -80px
+  // 버튼 햄버거 메뉴 라인
+  .page-menu-bar
+    @extend %page-menu-bar
+  // 버튼 뒤 원형 배경
+  &::before
+    content: ''
+    width: 48px
+    height: 48px
+    position: absolute
+    left: 0
+    top: 0
+    z-index: -1
+    border-radius: 50%
+    background: none
+    transform: scale(0.8)
+    transition: all 0.25s
+  // 버튼 Hover시 스타일 처리
+  &:hover  
+    .page-menu-bar
+      transform: scale(0.9)
+      margin-bottom: 5px
+      background: #fff
+    &:hover::before,
+    &:hover.active::before
+      background: #000
+      transform: scale(1)
+  &.active::before
+    background: #a7a7a7
+  &.active .page-menu-bar
+    background: #fff
+  
+  // 접근성 고대비모드 커스텀 설정
+  &.a11y-color-mode
+    .page-menu-bar
+      background: #fff !important
+    &::before
+      display: none
+
+// Scroll될 때 보여줄, Fixed Menu Button
+.page-menu-fixed
+  @extend %btn
+  @extend %btn-fixed-menu
+  display: none
+  position: absolute
+  top: 15px
+  z-index: 110
+  padding-top: 60px
+  overflow: hidden
+  transition: all 0.25s
+  // hover-focus시 화면
+  &:hover,
+  &:focus
+    outline: none
+  .page-menu-bar
+    @extend %page-menu-bar
+    position: relative
+  .page-menu-bar:nth-child(5)
+    opacity: 0
+  &:hover span:nth-child(2)
+    animation: menu-bar-animation-bar-01 0.45s forwards
+  &:hover span:nth-child(3)
+    animation: menu-bar-animation-bar-02 0.45s forwards
+  &:hover span:nth-child(4)
+    animation: menu-bar-animation-bar-02 0.45s forwards
+  &:hover span:nth-child(5)
+    animation: menu-bar-animation-bar-03 0.45s forwards
+  &.show
+    display: block
+    padding-top: 8px
+    top: 8px
+  // 접근성 고대비모드 커스텀
+  &.a11y-color-mode
+    .page-menu-bar
+      background: #fff01f !important
+
+// GNB MENU
+.container__gnb
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 50
+  width: 100%
+  padding-left: 60px
+  border-bottom: 1px solid #cdcdcd
+  background: rgba(255,255,255,0.9)
+
+  .gnb-menu
+    @extend %clearfix
+    li
+      float: left
+    a
+      @extend %uppercase
+      height: 60px
+      display: inlien-block
+      margin-right: 12px
+      margin-left: 12px
+      line-height: 60px
+      font-size: 14px
+      font-weight: 600      
+      &.active
+        color: #00b3e3
+
+// scrollTo Edge 버튼
+.btn__scroll-to-edge
+  @extend %btn
+  position: fixed
+  width: 48px
+  height: 48px
+  bottom: 6px
+  right: 30px
+  z-index: 40
+  background-image: url("../assets/img/bg_topbutton.png")
+  background-size: 48px
+  border-radius: 50%
+  transform: rotate(180deg)
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  // Scroll됬을 경우 화살표 처리
+  &.fixed
+    transform: rotate(0deg)
+  // Footer에 닿을 경우, 숨기기
+  &.hide
+    display: none
+  @extend %a11y-color-mode-yellow

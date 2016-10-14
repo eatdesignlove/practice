@@ -1,21 +1,19 @@
-$base-font-size: 16px
 %font-proxima-nova-a
   font-family: "proxima-nova-alt",sans-serif
 %font-jaf
   font-family: "jaf-facitweb", sans-serif
 
+
+body, p
+  @extend %font-jaf
+  font-size: 21px
 h1, h2, h3, h4, h5, a
   @extend %font-proxima-nova-a
   letter-spacing: -0.01em
 h2
   font-weight: 700
   font-size: 80px
-
 h3
   font-weight: 600
   font-size: 32px
-
-body, p
-  @extend %font-jaf
-  font-size: 21px
   

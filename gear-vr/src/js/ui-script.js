@@ -76,6 +76,84 @@
 
 
 
+(function(global){
+  'use strict';
+
+  // --------------------
+  // A11y-Mode 
+  // --------------------
+  var a11y_contrast_color = query('.btn__a11y-color-contrast');
+  var a11y_contrast_default = query('.btn__a11y-color-default');
+  var a11y_target = [
+    '.brand-logo',
+    '.page-menu',
+    '.page-menu-fixed',
+    '.contianer__product-brand',
+    '.gnb-menu li',
+    '.gnb-menu li a',
+    '.btn__scroll-to-edge',
+    '.feature__title',
+    '.feature__desc',
+    '.list-title',
+    '.list-desc',
+    '.container__links a',
+    '.btn__go-gallery',
+    '.feature-specification h3',
+    '.feature-specification p',
+    '.btn__next',
+    '.btn__prev',
+    '.carousel-indicator button',
+    '.feature-experiences .feature-list li',
+    '.feture-vr-gallery li',
+    '.page-footer',
+    '.container__share a',
+    '.container__sm-links a',
+    '.container__add-links a',
+    '.container__utility a',
+    '.container__network-setting-list',
+    '.btn__a11y-color-default',
+    '.container__add-links button',
+    '.copyright',
+  ];
+  var a11y_target_len, a11y_target_els, a11y_target_els_len;
+
+
+  // 이벤트 바인딩
+  bindEvent();
+
+  function bindEvent() {
+    a11y_contrast_color.onclick = changeA11yColorMode;
+    a11y_contrast_default.onclick = changeA11yColorMode;
+  }
+
+  // 바인딩할 함수
+  function changeA11yColorMode() {
+    var mode_type = this.getAttribute('data-color-mode');
+    a11y_target_len = a11y_target.length;
+    console.log(mode_type);
+
+    while ( a11y_target[--a11y_target_len] ) {
+      a11y_target_els = queryAll(a11y_target[a11y_target_len]);
+      a11y_target_els_len = a11y_target_els.length;
+      // console.log(a11y_target_els, a11y_target_els_len);
+
+      while( a11y_target_els[--a11y_target_els_len] ) {
+        if ( mode_type === 'a11y') {
+          addClass(a11y_target_els[a11y_target_els_len], 'a11y-color-mode');
+
+        } else {
+          removeClass(a11y_target_els[a11y_target_els_len], 'a11y-color-mode');
+
+        }
+      }
+    }  
+  }
+
+
+
+
+
+}(this));
 
 
 

@@ -11,7 +11,7 @@
     triggerHook : "0.075"
   });
   scene_GNB_sticky
-    .setPin(".gnb")
+    .setPin(".container__gnb")
     // .addIndicators({name: "GNB"})
     .addTo(ctrl);
 
@@ -97,8 +97,8 @@
   scene_page_menu
     .setClassToggle('.page-menu', 'hide')
     .on("enter leave", function (e) {
-      console.log(e.type === 'leave' && e.target.controller().info("scrollDirection") === 'FORWARD');
-      console.log(e.type === 'enter');
+      // console.log(e.type === 'leave' && e.target.controller().info("scrollDirection") === 'FORWARD');
+      // console.log(e.type === 'enter');
       if (e.type === 'leave' && e.target.controller().info("scrollDirection") === 'FORWARD') {
         btn_scroll_edge.setAttribute('data-section-title', 'page-main');
       } else if (e.type === 'enter'){
@@ -351,7 +351,7 @@
   scene_moving_figure
     .on("progress", function (e) {
       changed = 50 + e.progress * 10;
-      console.log(changed);
+      // console.log(changed);
       css(vf_key_img_g360, 'transform', 'translateX('+ changed +'%)');
       css(vf_key_img_gnote, 'transform', 'translateX(-'+ changed +'%)');
     })
